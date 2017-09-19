@@ -43,15 +43,18 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Enable Pathogen Plugins
+execute pathogen#infect()
+" call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 " Sets how many lines of history VIM has to remember
 set history=500
 
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
-
-" Enable Pathogen Plugins
-execute pathogen#infect()
 
 " Set to auto read when a file is changed from the outside
 set autoread

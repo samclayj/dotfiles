@@ -1,4 +1,4 @@
 # Create Symbolic Links
 
-	ln -s ~/.vim/vimrc ~/.vimrc
+	ln -s ~/.vim/.vimrc ~/.vimrc
 
