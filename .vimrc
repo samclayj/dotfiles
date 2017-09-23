@@ -54,6 +54,11 @@ set history=500
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
+syntax on
+
+" vimwiki with markdown support
+let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+" " helppage -> :h vimwiki-syntax
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -68,7 +73,7 @@ nmap <leader>w :w!<cr>
 
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)
-command W w !sudo tee % > /dev/null
+" command W w !sudo tee % > /dev/null
 
 " Enable line numbers
 set number

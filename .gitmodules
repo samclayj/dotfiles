@@ -4,3 +4,6 @@
 [submodule "bundle/vimwiki"]
 	path = bundle/vimwiki
 	url = https://github.com/vimwiki/vimwiki.git
+[submodule "vim-livedown"]
+	path = vim-livedown
+	url = git://github.com/shime/vim-livedown.git
