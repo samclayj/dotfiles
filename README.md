@@ -14,6 +14,7 @@
     cd ~
     git clone http://github.com/samclayj/dotfiles.git ~/.vim
     ln -s ~/.vim/vimrc ~/.vimrc
+    ln -s ~/.vim/tmux.conf ~/.tmux.conf
     cd ~/.vim
     git submodule update --init
 
