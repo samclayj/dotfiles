@@ -10,3 +10,6 @@
 [submodule "bundle/live-down"]
 	path = bundle/live-down
 	url = https://github.com/shime/vim-livedown
+[submodule "bundle/vim-livedown"]
+	path = bundle/vim-livedown
+	url = https://github.com/shime/vim-livedown
