@@ -14,14 +14,26 @@
     cd ~
     git clone http://github.com/samclayj/dotfiles.git ~/.vim
     ln -s ~/.vim/vimrc ~/.vimrc
+    ln -s ~/.vim/zshrc ~/.zshrc
     ln -s ~/.vim/tmux.conf ~/.tmux.conf
     cd ~/.vim
     git submodule update --init
     
 # Install tmux
 
+  **Linux**
     sudo apt-get update
     sudo apt-get install tmux
+
+# Install oh my zsh
+    **Mac (with Homebrew)**
+        brew install zsh zsh-completions
+
+    **Linux**
+        apt install zsh
+
+    **Change default shell**
+        chsh -s $(which zsh)
 
 # Update plugins
 
