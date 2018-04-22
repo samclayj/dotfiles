@@ -7,43 +7,43 @@
 
 # Install Dependencies
 
-    #### Install Homebrew (for Mac)
-        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-        
-    #### Install tmux
+#### Install Homebrew (for Mac)
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    
+#### Install tmux
 
-        **Mac (with Homebrew)**
+**Mac (with Homebrew)**
 
-        **Linux**
-          sudo apt-get update
-          sudo apt-get install tmux
+**Linux**
+      sudo apt-get update
+      sudo apt-get install tmux
 
-    #### Install oh my zsh
+#### Install oh my zsh
 
-        **Mac (with Homebrew)**
-            brew install zsh zsh-completions
+**Mac (with Homebrew)**
+        brew install zsh zsh-completions
 
-        **Linux**
-            apt install zsh
+**Linux**
+        sudo apt install zsh
+        sudo sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
-        **Change default shell**
-            chsh -s $(which zsh)
+**Change default shell**
+        sudo chsh -s $(which zsh)
 
 # Install on New Machine
 
-    #### Clone configuration
-    
-        cd ~
-        git clone http://github.com/samclayj/dotfiles.git ~/.vim
-        cd ~/.vim
-        git submodule update --init
-    
-    #### Create Symbolic Links
+#### Clone configuration
 
-        ln -s ~/.vim/vimrc ~/.vimrc
-        ln -s ~/.vim/zshrc ~/.zshrc
-        ln -s ~/.vim/tmux.conf ~/.tmux.conf
+    cd ~
+    git clone http://github.com/samclayj/dotfiles.git ~/.vim
+    cd ~/.vim
+    git submodule update --init
 
+#### Create Symbolic Links
+
+    ln -s ~/.vim/vimrc ~/.vimrc
+    ln -s ~/.vim/zshrc ~/.zshrc
+    ln -s ~/.vim/tmux.conf ~/.tmux.conf
     
 # Update plugins
 
