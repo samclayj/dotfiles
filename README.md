@@ -7,10 +7,10 @@
 
 # Install Dependencies
 
-#### Install Homebrew (for Mac)
+## Install Homebrew (for Mac)
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     
-#### Install tmux
+## Install tmux
 
 **Mac (with Homebrew)**
 
@@ -18,7 +18,7 @@
       sudo apt-get update
       sudo apt-get install tmux
 
-#### Install oh my zsh
+## Install oh my zsh
 
 **Mac (with Homebrew)**
         brew install zsh zsh-completions
@@ -32,14 +32,14 @@
 
 # Install on New Machine
 
-#### Clone configuration
+## Clone configuration
 
     cd ~
     git clone http://github.com/samclayj/dotfiles.git ~/.vim
     cd ~/.vim
     git submodule update --init
 
-#### Create Symbolic Links
+## Create Symbolic Links
 
     ln -s ~/.vim/vimrc ~/.vimrc
     ln -s ~/.vim/zshrc ~/.zshrc
