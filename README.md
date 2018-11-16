@@ -3,6 +3,10 @@
 ## Install Homebrew (for Mac)
 
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+## Install iTerm
+
+    brew cask install iterm2
     
 ## Install tmux
 
@@ -20,6 +24,7 @@
 **Mac (with Homebrew)**
 
     brew install zsh zsh-completions
+    brew install zsh-syntax-highlighting
 
 **Linux**
 
@@ -29,6 +34,10 @@
 **Change default shell**
 
     sudo chsh -s $(which zsh)
+
+**Install oh-my-zsh**
+
+    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Install on New Machine
 
@@ -43,6 +52,7 @@
     ln -s ~/.vim/vimrc ~/.vimrc
     ln -s ~/.vim/zshrc ~/.zshrc
     ln -s ~/.vim/.tmux.conf ~/.tmux.conf
+    ln -s ~/.vim/.sam.zsh-theme ~/.oh-my-zsh/themes/.tmux.conf
 
 #### Copy Local tmux file
 
