@@ -1,26 +1,33 @@
 # Install Dependencies
 
-    #### Install Homebrew (for Mac)
-        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-        
-    #### Install tmux
+## Install Homebrew (for Mac)
 
-        **Mac (with Homebrew)**
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    
+## Install tmux
 
-        **Linux**
-          sudo apt-get update
-          sudo apt-get install tmux
+**Mac (with Homebrew)**
 
-    #### Install oh my zsh
+    brew install tmux
 
-        **Mac (with Homebrew)**
-            brew install zsh zsh-completions
+**Linux**
 
-        **Linux**
-            apt install zsh
+      sudo apt-get update
+      sudo apt-get install tmux
 
-        **Change default shell**
-            chsh -s $(which zsh)
+## Install oh my zsh
+
+**Mac (with Homebrew)**
+
+        brew install zsh zsh-completions
+
+**Linux**
+
+        sudo apt install zsh
+        sudo sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
+**Change default shell**
+        sudo chsh -s $(which zsh)
 
 # Install on New Machine
 
@@ -40,4 +47,4 @@
 
 # Configurations:
 
-https://github.com/gpakosz/.tmux
+    https://github.com/gpakosz/.tmux
