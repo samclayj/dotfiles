@@ -52,7 +52,7 @@
     ln -s ~/.vim/vimrc ~/.vimrc
     ln -s ~/.vim/zshrc ~/.zshrc
     ln -s ~/.vim/.tmux.conf ~/.tmux.conf
-    ln -s ~/.vim/.sam.zsh-theme ~/.oh-my-zsh/themes/.tmux.conf
+    ln -s ~/.vim/sam.zsh-theme ~/.oh-my-zsh/themes/sam.zsh-theme
 
 #### Copy Local tmux file
 

@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/samj/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -94,3 +94,15 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+# Google
+# source /etc/bash_completion.d/g4d
+# alias fixjs=/google/src/components/head/google3/third_party/java_src/jscomp/java/com/google/javascript/jscomp/lint/fixjs.sh
+# alias guitar=/google/data/ro/projects/testing/integrate/local_guitar.par
+# alias borg_guitar=/google/data/ro/projects/testing/integrate/guitar_oneshot.par
+# alias jester="/google/data/ro/projects/platforms/testing/voodoo/jester"
+# alias servertest="/google/data/ro/projects/platforms/pitcairn/servertest"
+# alias ruler="/google/data/ro/teams/platforms-ruler/cli/ruler"
+# alias ruler_dev="/google/data/ro/teams/platforms-ruler/cli_canary/ruler"
+# alias gclfmt="/google/data/ro/projects/borg/gclfmt"
+# alias ll="ls -l"
