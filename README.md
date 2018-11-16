@@ -1,10 +1,3 @@
-# Add a new plugin
-    
-    cd ~/.vim
-    git submodule add http://github.com/tpope/vim-fugitive.git bundle/fugitive
-    git add .
-    git commit -m "Install Fugitive.vim bundle as a submodule."
-
 # Install Dependencies
 
     #### Install Homebrew (for Mac)
@@ -36,15 +29,15 @@
         cd ~
         git clone http://github.com/samclayj/dotfiles.git ~/.vim
         cd ~/.vim
-        git submodule update --init
     
     #### Create Symbolic Links
 
-        ln -s ~/.vim/vimrc ~/.vimrc
-        ln -s ~/.vim/zshrc ~/.zshrc
-        ln -s ~/.vim/tmux.conf ~/.tmux.conf
+        ln -s ~/.vim/vimrc ~/.vimrc; ln -s ~/.vim/zshrc ~/.zshrc; ln -s ~/.vim/.tmux.conf ~/.tmux.conf
 
-    
-# Update plugins
+    #### Copy Local tmux file
 
-    git submodule foreach git pull origin master
+        cp ~/.vim/.tmux.conf.local ~/.tmux.conf.local
+
+# Configurations:
+
+https://github.com/gpakosz/.tmux
