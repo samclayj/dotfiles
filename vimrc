@@ -258,3 +258,11 @@ map <leader>sa zg
 map <leader>s? z=
 
 set path=$PWD/**
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Enable Google Plugins
+" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" set nocompatible
+" source /usr/share/vim/google/google.vim
+" filetype plugin indent on
+" syntax on

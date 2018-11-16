@@ -8,26 +8,27 @@
 
 **Mac (with Homebrew)**
 
-    brew install tmux
+  brew install tmux
 
 **Linux**
 
-      sudo apt-get update
-      sudo apt-get install tmux
+  sudo apt-get update
+  sudo apt-get install tmux
 
 ## Install oh my zsh
 
 **Mac (with Homebrew)**
 
-        brew install zsh zsh-completions
+    brew install zsh zsh-completions
 
 **Linux**
 
-        sudo apt install zsh
-        sudo sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+    sudo apt install zsh
+    sudo sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 **Change default shell**
-        sudo chsh -s $(which zsh)
+
+    sudo chsh -s $(which zsh)
 
 # Install on New Machine
 
