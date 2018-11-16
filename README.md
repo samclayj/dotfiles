@@ -33,13 +33,15 @@
 
 #### Clone configuration
     
-        cd ~
-        git clone http://github.com/samclayj/dotfiles.git ~/.vim
-        cd ~/.vim
+    cd ~
+    git clone http://github.com/samclayj/dotfiles.git ~/.vim
+    cd ~/.vim
     
 #### Create Symbolic Links
 
-        ln -s ~/.vim/vimrc ~/.vimrc; ln -s ~/.vim/zshrc ~/.zshrc; ln -s ~/.vim/.tmux.conf ~/.tmux.conf
+    ln -s ~/.vim/vimrc ~/.vimrc
+    ln -s ~/.vim/zshrc ~/.zshrc
+    ln -s ~/.vim/.tmux.conf ~/.tmux.conf
 
 #### Copy Local tmux file
 
@@ -47,4 +49,4 @@
 
 # Configurations:
 
-https://github.com/gpakosz/.tmux
+tmux configuration file: https://github.com/gpakosz/.tmux
