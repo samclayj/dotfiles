@@ -31,20 +31,20 @@
 
 # Install on New Machine
 
-    #### Clone configuration
+#### Clone configuration
     
         cd ~
         git clone http://github.com/samclayj/dotfiles.git ~/.vim
         cd ~/.vim
     
-    #### Create Symbolic Links
+#### Create Symbolic Links
 
         ln -s ~/.vim/vimrc ~/.vimrc; ln -s ~/.vim/zshrc ~/.zshrc; ln -s ~/.vim/.tmux.conf ~/.tmux.conf
 
-    #### Copy Local tmux file
+#### Copy Local tmux file
 
-        cp ~/.vim/.tmux.conf.local ~/.tmux.conf.local
+    cp ~/.vim/.tmux.conf.local ~/.tmux.conf.local
 
 # Configurations:
 
-    https://github.com/gpakosz/.tmux
+https://github.com/gpakosz/.tmux
