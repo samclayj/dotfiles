@@ -94,15 +94,34 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
+
+# Just for fun.
+function wise_stego {
+	if [ -x /usr/games/cowsay -a -x /usr/games/fortune ]; then
+		watch -n 3 '/usr/games/fortune | /usr/games/cowsay -f stegosaurus'
+	fi
+}
+
+function rainbow_stego {
+	if [ -x /usr/games/cowsay -a -x /usr/games/fortune ]; then
+		while true; do clear; date;echo; /usr/games/fortune | /usr/games/cowsay -f stegosaurus | lolcat; sleep 15; done
+	fi
+}
+
 # Google
-# source /etc/bash_completion.d/g4d
-# alias fixjs=/google/src/components/head/google3/third_party/java_src/jscomp/java/com/google/javascript/jscomp/lint/fixjs.sh
-# alias guitar=/google/data/ro/projects/testing/integrate/local_guitar.par
-# alias borg_guitar=/google/data/ro/projects/testing/integrate/guitar_oneshot.par
-# alias jester="/google/data/ro/projects/platforms/testing/voodoo/jester"
-# alias servertest="/google/data/ro/projects/platforms/pitcairn/servertest"
-# alias ruler="/google/data/ro/teams/platforms-ruler/cli/ruler"
-# alias ruler_dev="/google/data/ro/teams/platforms-ruler/cli_canary/ruler"
-# alias gclfmt="/google/data/ro/projects/borg/gclfmt"
-# alias ll="ls -l"
+source /etc/bash_completion.d/g4d
+alias fixjs=/google/src/components/head/google3/third_party/java_src/jscomp/java/com/google/javascript/jscomp/lint/fixjs.sh
+alias guitar=/google/data/ro/projects/testing/integrate/local_guitar.par
+alias borg_guitar=/google/data/ro/projects/testing/integrate/guitar_oneshot.par
+alias jester="/google/data/ro/projects/platforms/testing/voodoo/jester"
+alias servertest="/google/data/ro/projects/platforms/pitcairn/servertest"
+alias ruler="/google/data/ro/teams/platforms-ruler/cli/ruler"
+alias ruler_dev="/google/data/ro/teams/platforms-ruler/cli_canary/ruler"
+alias gclfmt="/google/data/ro/projects/borg/gclfmt"
+alias ll="ls -l"
+
+# Current revision graph  
+function fig_watch {
+  HGPLAINEXCEPT=i18n,alias,templatealias,revsetalias,color
+  watch -n 1 -c hg xl --color=always
+}
