@@ -125,3 +125,7 @@ function fig_watch {
   HGPLAINEXCEPT=i18n,alias,templatealias,revsetalias,color
   watch -n 1 -c hg xl --color=always
 }
+
+function ultimate_fig_watch {
+  watch -n 1 -c 'hg xl --color=always | /usr/games/cowsay -W 80 -f stegosaurus'
+} 
