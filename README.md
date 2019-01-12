@@ -23,8 +23,8 @@
 
 **Mac (with Homebrew)**
 
-    brew install zsh zsh-completions
-    brew install zsh-syntax-highlighting
+  brew install zsh zsh-completions
+  brew install zsh-syntax-highlighting
 
 **Linux**
 
