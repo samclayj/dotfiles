@@ -128,7 +128,7 @@ function fig_watch {
 
 function fig_diff {
   HGPLAINEXCEPT=i18n,alias,templatealias,revsetalias,color
-  watch -n 1 -c hg pstat --stat --color=always
+  watch -n 1 -c hg pdiff --stat --color=always
 }
 
 function ultimate_fig_watch {
