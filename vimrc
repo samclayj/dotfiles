@@ -262,7 +262,7 @@ set path=$PWD/**
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Enable Google Plugins
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" set nocompatible
-" source /usr/share/vim/google/google.vim
-" filetype plugin indent on
-" syntax on
+set nocompatible
+source /usr/share/vim/google/google.vim
+filetype plugin indent on
+syntax on
