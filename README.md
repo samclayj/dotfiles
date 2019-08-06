@@ -72,3 +72,6 @@ tmux configuration file: https://github.com/gpakosz/.tmux
 
 Note there is a custom script on a timer that reloads Vim buffers to have an
 advanced autoread capability: https://stackoverflow.com/questions/2490227/how-does-vims-autoread-work
+
+# Iterm Color Schemes
+https://iterm2colorschemes.com/
