@@ -1,8 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/google/src/cloud/sjentsch/beta-to-prod/google3/platforms/testing/infra/ui/legba/common'
-let g:netrw_dirhist_2='/google/src/cloud/sjentsch/beta-to-prod/google3/platforms/testing/infra/ui/legba'
-let g:netrw_dirhist_3='/google/src/cloud/sjentsch/beta-to-prod/google3/platforms/testing/infra/ui/legba/logview'
-let g:netrw_dirhist_4='/google/src/cloud/sjentsch/beta-to-prod/google3/platforms/testing/infra/ui/legba'
-let g:netrw_dirhist_5='/google/src/cloud/sjentsch/beta-to-prod/google3/platforms/testing/infra/ui/legba/common'
-let g:netrw_dirhist_6='/google/src/cloud/sjentsch/beta-to-prod/google3/platforms/testing/infra/ui/legba/logview'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/google/src/cloud/sjentsch/bug-fixes/google3/platforms/testing/infra/ui/legba'
+let g:netrw_dirhist_2='/google/src/cloud/sjentsch/bug-fixes/google3/platforms/testing/infra/ui/legba/components'
+let g:netrw_dirhist_3='/google/src/cloud/sjentsch/bug-fixes/google3/platforms/testing/infra/ui/legba/components/logview_page_results'

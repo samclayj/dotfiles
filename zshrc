@@ -10,6 +10,7 @@ export ZSH=~/.oh-my-zsh
 ZSH_THEME="sam"
 # ZSH_THEME="cloud"
 # ZSH_THEME="avit"
+# ZSH_THEME="agnoster"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -61,6 +62,7 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  zsh-syntax-highlighting
   git
 )
 
@@ -107,6 +109,8 @@ function rainbow_stego {
 		while true; do clear; date;echo; /usr/games/fortune | /usr/games/cowsay -f stegosaurus | lolcat; sleep 15; done
 	fi
 }
+
+alias brexit=exit
 
 # Google
 source /etc/bash_completion.d/g4d

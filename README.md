@@ -7,17 +7,17 @@
 ## Install iTerm
 
     brew cask install iterm2
-    
+
 ## Install tmux
 
 **Mac (with Homebrew)**
 
-  brew install tmux
+    brew install tmux
 
 **Linux**
 
-  sudo apt-get update
-  sudo apt-get install tmux
+    sudo apt-get update
+    sudo apt-get install tmux
 
 ## Install oh my zsh
 
@@ -39,14 +39,20 @@
 
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+**Install Syntax highlighting Plugin (Mac)**
+brew install zsh-syntax-highlighting
+
+**Further instructions for Synax Highlighting**
+https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
+
 # Install on New Machine
 
 #### Clone configuration
-    
+
     cd ~
     git clone http://github.com/samclayj/dotfiles.git ~/.vim
     cd ~/.vim
-    
+
 #### Create Symbolic Links
 
     ln -s ~/.vim/vimrc ~/.vimrc
@@ -61,3 +67,8 @@
 # Configurations:
 
 tmux configuration file: https://github.com/gpakosz/.tmux
+
+# Autoread in Vim
+
+Note there is a custom script on a timer that reloads Vim buffers to have an
+advanced autoread capability: https://stackoverflow.com/questions/2490227/how-does-vims-autoread-work
