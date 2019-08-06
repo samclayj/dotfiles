@@ -40,9 +40,11 @@
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 **Install Syntax highlighting Plugin (Mac)**
+
 brew install zsh-syntax-highlighting
 
 **Further instructions for Synax Highlighting**
+
 https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
 
 # Install on New Machine
@@ -74,4 +76,7 @@ Note there is a custom script on a timer that reloads Vim buffers to have an
 advanced autoread capability: https://stackoverflow.com/questions/2490227/how-does-vims-autoread-work
 
 # Iterm Color Schemes
+
 https://iterm2colorschemes.com/
+
+Current scheme is Afterglow.

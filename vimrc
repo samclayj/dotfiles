@@ -109,7 +109,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme ron
+    colo zellner
 catch
 endtry
 
