@@ -92,8 +92,12 @@ There's quite a bit of power now in Quick Actions with AppleScript/Automator. Yo
 
 One example is an Undocking MBP action that I made to eject all attached drives, close Lightroom Classic, and connect to WiFi. There's quite a few options here for additional changes as well.
 
+## Docking with Ethernet
+Set ethernet to default: [macOS - How to get Mac to give Ethernet connection priority? - Ask Different](https://apple.stackexchange.com/questions/245353/how-to-get-mac-to-give-ethernet-connection-priority)
+
 # TODO
 
-[ ] Create a Mac and Linux bash script to automate the installation + configuration.
-[ ] Make some CLIs to automate processes
-[ ] Add Mac specific automation AppleScripts + Automator files
+- [ ] Create a Mac and Linux bash script to automate the installation + configuration.
+- [ ] Make some CLIs to automate processes
+- [ ] Add Mac specific automation AppleScripts + Automator files
+
