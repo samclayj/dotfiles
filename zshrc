@@ -62,7 +62,6 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  zsh-syntax-highlighting
   git
 )
 
@@ -112,29 +111,3 @@ function rainbow_stego {
 
 alias brexit=exit
 
-# Google
-source /etc/bash_completion.d/g4d
-alias fixjs=/google/src/components/head/google3/third_party/java_src/jscomp/java/com/google/javascript/jscomp/lint/fixjs.sh
-alias guitar=/google/data/ro/projects/testing/integrate/local_guitar.par
-alias borg_guitar=/google/data/ro/projects/testing/integrate/guitar_oneshot.par
-alias jester="/google/data/ro/projects/platforms/testing/voodoo/jester"
-alias servertest="/google/data/ro/projects/platforms/pitcairn/servertest"
-alias ruler="/google/data/ro/teams/platforms-ruler/cli/ruler"
-alias ruler_dev="/google/data/ro/teams/platforms-ruler/cli_canary/ruler"
-alias gclfmt="/google/data/ro/projects/borg/gclfmt"
-alias ll="ls -l"
-
-# Current revision graph  
-function fig_watch {
-  HGPLAINEXCEPT=i18n,alias,templatealias,revsetalias,color
-  watch -n 1 -c hg xl --color=always
-}
-
-function fig_diff {
-  HGPLAINEXCEPT=i18n,alias,templatealias,revsetalias,color
-  watch -n 1 -c hg pdiff --stat --color=always
-}
-
-function ultimate_fig_watch {
-  watch -n 1 -c 'hg xl --color=always | /usr/games/cowsay -W 80 -f stegosaurus'
-} 

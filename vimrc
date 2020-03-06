@@ -268,11 +268,3 @@ function! CheckUpdate(timer)
     silent! checktime
     call timer_start(1000,'CheckUpdate')
 endfunction
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Enable Google Plugins
-" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible
-source /usr/share/vim/google/google.vim
-filetype plugin indent on
-syntax on
