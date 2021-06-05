@@ -30,6 +30,10 @@ https://github.com/cli/cli/blob/trunk/docs/install_linux.md
 
 Install, then login.
 
+**Login**
+
+    gh auth login
+
 
 ## Install iTerm
 
