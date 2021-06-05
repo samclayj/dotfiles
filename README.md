@@ -1,3 +1,11 @@
+# Create a Sudo User
+
+Log in as root, and then create a sudo user. 
+
+Use this user from now on when logging in for development work.
+
+[Digital Ocean Instructions](https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-ubuntu-quickstart)
+
 # Install Dependencies
 
 ## Install Homebrew (for Mac)
@@ -94,6 +102,7 @@ One example is an Undocking MBP action that I made to eject all attached drives,
 
 ## Docking with Ethernet
 Set ethernet to default: [macOS - How to get Mac to give Ethernet connection priority? - Ask Different](https://apple.stackexchange.com/questions/245353/how-to-get-mac-to-give-ethernet-connection-priority)
+
 
 # TODO
 
