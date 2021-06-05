@@ -16,11 +16,20 @@ Use this user from now on when logging in for development work.
 
 This is worth having - makes managing git repositories much easier after logging in a single time.
 
-Install: 
+**Mac**
 
     brew install gh 
     
 Then login.
+
+**Ubuntu**
+
+Install Go (see [Instructions](https://linuxize.com/post/how-to-install-go-on-ubuntu-20-04/)).
+
+Then follow [build from source](https://github.com/cli/cli/blob/trunk/docs/source.md) instructions for Github CLI.
+
+Then login.
+
 
 ## Install iTerm
 
