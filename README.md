@@ -24,11 +24,11 @@ Then login.
 
 **Ubuntu**
 
-Install Go (see [Instructions](https://linuxize.com/post/how-to-install-go-on-ubuntu-20-04/)).
+Follow instructions for configuring apt-get:
 
-Then follow [build from source](https://github.com/cli/cli/blob/trunk/docs/source.md) instructions for Github CLI.
+https://github.com/cli/cli/blob/trunk/docs/install_linux.md
 
-Then login.
+Install, then login.
 
 
 ## Install iTerm
