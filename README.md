@@ -8,9 +8,19 @@ Use this user from now on when logging in for development work.
 
 # Install Dependencies
 
-## Install Homebrew (for Mac)
+## Install Homebrew (for Mac and Linux)
 
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    
+## Install Github CLI
+
+This is worth having - makes managing git repositories much easier after logging in a single time.
+
+Install: 
+
+    brew install gh 
+    
+Then login.
 
 ## Install iTerm
 
