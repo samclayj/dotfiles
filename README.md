@@ -34,6 +34,34 @@ Install, then login.
 
     gh auth login
 
+## Install NeoVim
+
+I just recently started using this, but it's pretty worth it.
+
+- [NeoVim](https://github.com/neovim/neovim)
+- [Sample NeoVim Config](https://medium.com/geekculture/neovim-configuration-for-beginners-b2116dbbde84)
+
+#### Install NeoVim:
+
+Mac:
+```
+brew install neovim
+```
+
+Linux: TBD
+
+#### Install [vim-plug](https://github.com/junegunn/vim-plug):
+
+```
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+```
+
+#### Install Plug-ins:
+
+```
+nvim --headless +PlugInstall +qall
+```
 
 ## Install iTerm
 
@@ -93,10 +121,15 @@ Install, then login.
 
 #### Create Symbolic Links
 
-    ln -s ~/.vim/vimrc ~/.vimrc
+    ln -s ~/.vim/init.vim ~/.config/nvim/init.vim
+    ln -s ~/.vim/vim.init ~/.vimrc
     ln -s ~/.vim/zshrc ~/.zshrc
     ln -s ~/.vim/.tmux.conf ~/.tmux.conf
     ln -s ~/.vim/sam.zsh-theme ~/.oh-my-zsh/themes/sam.zsh-theme
+
+
+    Optional - if using Vim instead of NeoVim.
+    ln -s ~/.vim/vimrc ~/.vimrc
 
 #### Copy Local tmux file
 
