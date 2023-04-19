@@ -7,9 +7,9 @@ export ZSH=~/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="sam"
+ZSH_THEME="sam"
 # ZSH_THEME="cloud"
-ZSH_THEME="avit"
+# ZSH_THEME="avit"
 # ZSH_THEME="agnoster"
 
 # Set list of themes to load
@@ -110,7 +110,7 @@ function rainbow_stego {
 }
 
 alias brexit=exit
-
+alias v="nvim"
 
 # The next line updates PATH for Netlify's Git Credential Helper.
 test -f '/Users/samjentsch/Library/Preferences/netlify/helper/path.zsh.inc' && source '/Users/samjentsch/Library/Preferences/netlify/helper/path.zsh.inc'

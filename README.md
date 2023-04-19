@@ -144,6 +144,24 @@ tmux configuration file: https://github.com/gpakosz/.tmux
 Note there is a custom script on a timer that reloads Vim buffers to have an
 advanced autoread capability: https://stackoverflow.com/questions/2490227/how-does-vims-autoread-work
 
+# Tidying
+
+* I can open vs code in browser (just like cider) by going to github.dev.
+
+Use `tidy` utility to format HTML files:
+
+```
+tidy <file>.html
+```
+
+Or from Vim:
+
+```
+:!tidy
+```
+
+To fix indentation in a file, use `=G` in Vim.
+
 # Iterm Color Schemes
 
 https://iterm2colorschemes.com/
