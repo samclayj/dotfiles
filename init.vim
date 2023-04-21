@@ -86,6 +86,7 @@ set tabstop=2
 " Linebreak on 80 characters
 set lbr
 set tw=80
+set textwidth=80
 
 set ai "Auto indent
 set autoindent expandtab tabstop=2 shiftwidth=2
