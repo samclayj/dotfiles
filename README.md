@@ -115,6 +115,28 @@ https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel1
 
 [ZSH Syntax Highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
 
+#### ZSH Auto Suggestions
+
+https://github.com/zsh-users/zsh-autosuggestions
+
+Install:
+
+```
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+```
+
+#### FZF
+
+https://github.com/junegunn/fzf#using-git
+
+Install and Enable (note you must run the install script).
+
+```
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+
+~/.fzf/install
+```
+
 # Install on New Machine
 
 #### Clone configuration
@@ -128,6 +150,7 @@ https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel1
     ln -s ~/.vim/init.vim ~/.config/nvim/init.vim
     ln -s ~/.vim/vim.init ~/.vimrc
     ln -s ~/.vim/zshrc ~/.zshrc
+    ln -s ~/.vim/zshenv ~/.zshenv
     ln -s ~/.vim/sam.zsh-theme ~/.oh-my-zsh/themes/sam.zsh-theme
 
 
