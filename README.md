@@ -78,6 +78,10 @@ nvim --headless +PlugInstall +qall
     sudo apt-get update
     sudo apt-get install tmux
 
+## Install ZSH Theme
+
+https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k
+
 ## Install oh my zsh
 
 **Mac (with Homebrew)**
