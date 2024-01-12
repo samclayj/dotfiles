@@ -124,20 +124,22 @@ nvim --headless +PlugInstall +qall
     ln -s ~/.vim/init.vim ~/.config/nvim/init.vim
     ln -s ~/.vim/vim.init ~/.vimrc
     ln -s ~/.vim/zshrc ~/.zshrc
-    ln -s ~/.vim/.tmux.conf ~/.tmux.conf
     ln -s ~/.vim/sam.zsh-theme ~/.oh-my-zsh/themes/sam.zsh-theme
 
 
     Optional - if using Vim instead of NeoVim.
     ln -s ~/.vim/vimrc ~/.vimrc
 
-#### Copy Local tmux file
-
-    cp ~/.vim/.tmux.conf.local ~/.tmux.conf.local
-
 # Configurations:
 
 tmux configuration file: https://github.com/gpakosz/.tmux
+
+```
+git clone https://github.com/gpakosz/.tmux.git
+mkdir -p "~/.config/tmux"
+ln -s "~/.vim/.tmux.conf" "~/.config/tmux/tmux.conf"
+cp "~/.vim/.tmux.conf.local" "~/.config/tmux/tmux.conf.local"
+```
 
 # Autoread in Vim
 

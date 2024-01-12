@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -7,7 +14,8 @@ export ZSH=~/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="sam"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="sam"
 # ZSH_THEME="cloud"
 # ZSH_THEME="avit"
 # ZSH_THEME="agnoster"
@@ -114,3 +122,6 @@ alias v="nvim"
 
 # The next line updates PATH for Netlify's Git Credential Helper.
 test -f '/Users/samjentsch/Library/Preferences/netlify/helper/path.zsh.inc' && source '/Users/samjentsch/Library/Preferences/netlify/helper/path.zsh.inc'
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
