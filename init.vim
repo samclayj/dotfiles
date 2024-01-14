@@ -25,6 +25,7 @@ set ttyfast                 " Speed up scrolling in Vim
 
 " Plugin Section
 call plug#begin()
+Plug 'bluz71/vim-moonfly-colors', { 'as': 'moonfly' }
 Plug 'dracula/vim'
 Plug 'rebelot/kanagawa.nvim'
 Plug 'reb/vim'
@@ -38,10 +39,11 @@ call plug#end()
 
 " color schemes
 if (has("termguicolors"))
-    set termguicolors
+  set termguicolors
 endif
 syntax enable
-colorscheme kanagawa
+colorscheme moonfly
+"colorscheme kanagawa
 
 " open new split panes to right and below
 set splitright

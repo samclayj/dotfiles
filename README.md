@@ -9,16 +9,18 @@ Use this user from now on when logging in for development work.
 # Install Dependencies
 
 ## Install Homebrew (for Mac and Linux)
-
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
     
 ## Install Github CLI
 
 This is worth having - makes managing git repositories much easier after logging in a single time.
 
 **Mac**
-
-    brew install gh 
+```
+brew install gh 
+```
     
 Then login.
 
@@ -34,7 +36,7 @@ Install, then login.
 
     gh auth login
 
-## Install NeoVim
+## NeoVim
 
 I just recently started using this, but it's pretty worth it.
 
@@ -64,56 +66,57 @@ nvim --headless +PlugInstall +qall
 ```
 
 ## Install iTerm
-
-    brew cask install iterm2
+```
+brew cask install iterm2
+```
 
 ## Install tmux
 
 **Mac (with Homebrew)**
-
-    brew install tmux
-
+```
+brew install tmux
+```
 **Linux**
-
-    sudo apt-get update
-    sudo apt-get install tmux
-
-## Install ZSH Theme
-
-https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k
-
-## Install oh my zsh
+```
+sudo apt-get update
+sudo apt-get install tmux
+```
+## Configure ZSH
 
 **Mac (with Homebrew)**
-
-    brew install zsh zsh-completions
-    brew install zsh-syntax-highlighting
-
+```
+brew install zsh zsh-completions
+brew install zsh-syntax-highlighting
+```
 **Linux**
-
-    sudo apt install zsh
-    sudo sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-
+```
+sudo apt install zsh
+sudo sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+```
 **Change default shell**
-
-    sudo chsh -s $(which zsh)
-
+```
+sudo chsh -s $(which zsh)
+```
 **Install oh-my-zsh**
-
-    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
+```
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
 **Fix issues about permissions**
-
-    sudo chmod g-w /usr/local/share/zsh/site-functions
-    sudo chmod g-w /usr/local/share/zsh
-
+```
+sudo chmod g-w /usr/local/share/zsh/site-functions
+sudo chmod g-w /usr/local/share/zsh
+```
 **Install Syntax highlighting Plugin (Mac)**
-
-    brew install zsh-syntax-highlighting
-
+```
+brew install zsh-syntax-highlighting
+```
 **Further instructions for Synax Highlighting**
 
 [ZSH Syntax Highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
+
+#### Install ZSH Theme
+
+https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k
 
 #### ZSH Auto Suggestions
 
@@ -140,23 +143,24 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 # Install on New Machine
 
 #### Clone configuration
-
-    cd ~
-    git clone http://github.com/samclayj/dotfiles.git ~/.vim
-    cd ~/.vim
-
+```
+cd ~
+git clone http://github.com/samclayj/dotfiles.git ~/.vim
+cd ~/.vim
+```
 #### Create Symbolic Links
+```
+ln -s ~/.vim/init.vim ~/.config/nvim/init.vim
+ln -s ~/.vim/vim.init ~/.vimrc
+ln -s ~/.vim/zshrc ~/.zshrc
+ln -s ~/.vim/zshenv ~/.zshenv
+ln -s ~/.vim/sam.zsh-theme ~/.oh-my-zsh/themes/sam.zsh-theme
+```
 
-    ln -s ~/.vim/init.vim ~/.config/nvim/init.vim
-    ln -s ~/.vim/vim.init ~/.vimrc
-    ln -s ~/.vim/zshrc ~/.zshrc
-    ln -s ~/.vim/zshenv ~/.zshenv
-    ln -s ~/.vim/sam.zsh-theme ~/.oh-my-zsh/themes/sam.zsh-theme
-
-
-    Optional - if using Vim instead of NeoVim.
-    ln -s ~/.vim/vimrc ~/.vimrc
-
+Optional - if using Vim instead of NeoVim.
+```
+ln -s ~/.vim/vimrc ~/.vimrc
+```
 # Configurations:
 
 tmux configuration file: https://github.com/gpakosz/.tmux
@@ -195,7 +199,9 @@ To fix indentation in a file, use `=G` in Vim.
 
 https://iterm2colorschemes.com/
 
-Current scheme is Afterglow.
+Current scheme is Moonfly. Afterglow is another option.
+
+These themes are already in the Git repo for the configuration, just install in iTerm.
 
 # Mac Specific Notes
 
@@ -205,7 +211,6 @@ One example is an Undocking MBP action that I made to eject all attached drives,
 
 ## Docking with Ethernet
 Set ethernet to default: [macOS - How to get Mac to give Ethernet connection priority? - Ask Different](https://apple.stackexchange.com/questions/245353/how-to-get-mac-to-give-ethernet-connection-priority)
-
 
 # TODO
 
