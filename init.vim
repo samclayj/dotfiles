@@ -42,8 +42,8 @@ if (has("termguicolors"))
   set termguicolors
 endif
 syntax enable
-colorscheme moonfly
-"colorscheme kanagawa
+"colorscheme moonfly
+colorscheme kanagawa
 
 " open new split panes to right and below
 set splitright
