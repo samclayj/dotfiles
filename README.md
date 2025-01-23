@@ -195,6 +195,20 @@ Or from Vim:
 
 To fix indentation in a file, use `=G` in Vim.
 
+### Python
+
+```
+pip install git+https://github.com/psf/black
+```
+
+Then run
+
+```
+black <directory or file>
+```
+
+And autoformatting magically happens.
+
 # Iterm Color Schemes
 
 https://iterm2colorschemes.com/
