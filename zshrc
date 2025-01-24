@@ -1,11 +1,11 @@
 export EDITOR="nvim"
 export VISUAL="nvim"
+alias v='nvim'
 
 autoload -U compinit; compinit
 setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history file.
 unsetopt HIST_SAVE_NO_DUPS       # Write a duplicate event to the history file
 
-alias v='nvim'
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 export KEYTIMEOUT=1
@@ -22,7 +22,8 @@ autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
-PS1='%F{blue}%~ 🦑→%(?.%F{green}.%F{red}) '
+# Prompt
+PS1='%F{blue}%~ 🦑 >>>%(?.%F{green}.%F{red}) '
 
 cursor_mode() {
     # See https://ttssh2.osdn.jp/manual/4/en/usage/tips/vim.html for cursor shapes
@@ -123,6 +124,5 @@ fpath=(~/.vim/zsh-completions $fpath)
 source ~/.vim/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.vim/zsh-autosuggestions/zsh-autosuggestions.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-
-
+source ~/.fzf/shell/completion.zsh
+source ~/.fzf/shell/key-bindings.zsh

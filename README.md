@@ -137,32 +137,11 @@ cd ~/.vim
 ```
 #### Create Symbolic Links
 ```
-ln -s ~/.vim/init.vim ~/.config/nvim/init.vim
-ln -s ~/.vim/vim.init ~/.vimrc
-ln -s ~/.vim/zshrc ~/.zshrc
-ln -s ~/.vim/zshenv ~/.zshenv
-ln -s ~/.vim/sam.zsh-theme ~/.oh-my-zsh/themes/sam.zsh-theme
-```
-
-Optional - if using Vim instead of NeoVim.
-```
-ln -s ~/.vim/vimrc ~/.vimrc
-```
-# Configurations:
-
-tmux configuration file: https://github.com/gpakosz/.tmux
-
-```
-git clone https://github.com/gpakosz/.tmux.git
 mkdir -p "~/.config/tmux"
-ln -s "~/.vim/.tmux.conf" "~/.config/tmux/tmux.conf"
-cp "~/.vim/.tmux.conf.local" "~/.config/tmux/tmux.conf.local"
+ln -s ~/.vim/init.vim ~/.config/nvim/init.vim
+ln -s ~/.vim/zshrc ~/.zshrc
+ln -s ~/.vim/tmux.conf ~/.config/tmux/.tmux.conf
 ```
-
-# Autoread in Vim
-
-Note there is a custom script on a timer that reloads Vim buffers to have an
-advanced autoread capability: https://stackoverflow.com/questions/2490227/how-does-vims-autoread-work
 
 # Tidying
 
@@ -198,24 +177,9 @@ And autoformatting magically happens.
 
 # Iterm Color Schemes
 
-https://iterm2colorschemes.com/
-
-Current scheme is Moonfly. Afterglow is another option.
-
-These themes are already in the Git repo for the configuration, just install in iTerm.
-
-# Mac Specific Notes
-
-There's quite a bit of power now in Quick Actions with AppleScript/Automator. You can add these to the touch bar so they are quickly accessible as well.
-
-One example is an Undocking MBP action that I made to eject all attached drives, close Lightroom Classic, and connect to WiFi. There's quite a few options here for additional changes as well.
-
+* https://iterm2colorschemes.com/
+* Current scheme is Moonfly. Afterglow is another option.
+* These themes are already in the Git repo for the configuration, just install in iTerm.
+ 
 ## Docking with Ethernet
 Set ethernet to default: [macOS - How to get Mac to give Ethernet connection priority? - Ask Different](https://apple.stackexchange.com/questions/245353/how-to-get-mac-to-give-ethernet-connection-priority)
-
-# TODO
-
-- [ ] Create a Mac and Linux bash script to automate the installation + configuration.
-- [ ] Make some CLIs to automate processes
-- [ ] Add Mac specific automation AppleScripts + Automator files
-
