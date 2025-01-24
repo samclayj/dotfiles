@@ -97,16 +97,14 @@ sudo chsh -s $(which zsh)
 > Install these plugins in `~/.vim/zsh_plugins.` for them to automatically be picked up by
 > the config.
 
-```
 **Install Syntax highlighting Plugin**
 
-[ZSH Syntax Highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
-
+* [ZSH Syntax Highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
 
 **Install ZSH auto suggestions Plugin:**
 
 ```
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.vim/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.vim/zsh_plugins/zsh-autosuggestions
 ```
 
 **Install FZF:**
