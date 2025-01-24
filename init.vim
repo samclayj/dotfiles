@@ -11,30 +11,29 @@ set shiftwidth=4            " width for autoindents
 set autoindent              " indent a new line the same amount as the line just typed
 set number                  " add line numbers
 set wildmode=longest,list   " get bash-like tab completions
-set cc=80                  " set an 80 column border for good coding style
 filetype plugin indent on   "allow auto-indenting depending on file type
 syntax on                   " syntax highlighting
 set mouse=a                 " enable mouse click
 set clipboard=unnamedplus   " using system clipboard
-filetype plugin on
 set cursorline              " highlight current cursorline
 set ttyfast                 " Speed up scrolling in Vim
-" set spell                 " enable spell check (may need to download language package)
-" set noswapfile            " disable creating swap file
-" set backupdir=~/.cache/vim " Directory to store backup files.
+set smarttab
+" Linebreak on 80 characters
+set cc=80                  " set an 80 column border for good coding style
+set lbr
+set tw=80
+set textwidth=80
+set si "Smart indent
+set wrap "Wrap lines
 
 " Plugin Section
+filetype plugin on
 call plug#begin()
 Plug 'bluz71/vim-moonfly-colors', { 'as': 'moonfly' }
-Plug 'dracula/vim'
 Plug 'rebelot/kanagawa.nvim'
-Plug 'reb/vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdtree'
-Plug 'preservim/nerdcommenter'
 Plug 'mhinz/vim-startify'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " color schemes
@@ -42,8 +41,8 @@ if (has("termguicolors"))
   set termguicolors
 endif
 syntax enable
-"colorscheme moonfly
-colorscheme kanagawa
+colorscheme moonfly
+"colorscheme kanagawa
 
 " open new split panes to right and below
 set splitright
@@ -68,27 +67,4 @@ nnoremap <C-l> <C-w>l
 :vnoremap jk <Esc>
 :vnoremap kj <Esc>
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Text, tab and indent related
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use spaces instead of tabs
-set expandtab
-
-" Be smart when using tabs ;)
-set smarttab
-
-" 1 tab == 2 spaces
-set shiftwidth=2
-set tabstop=2
-
-" Linebreak on 80 characters
-set lbr
-set tw=80
-set textwidth=80
-
-set ai "Auto indent
-set autoindent expandtab tabstop=2 shiftwidth=2
-set si "Smart indent
-set wrap "Wrap lines
 
