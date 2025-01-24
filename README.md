@@ -83,28 +83,18 @@ sudo apt-get install tmux
 ```
 ## Configure ZSH
 
-**Mac (with Homebrew)**
-```
-brew install zsh zsh-completions
-brew install zsh-syntax-highlighting
-```
 **Linux**
 ```
 sudo apt install zsh
-sudo sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 ```
 **Change default shell**
 ```
 sudo chsh -s $(which zsh)
 ```
-**Fix issues about permissions**
-```
-sudo chmod g-w /usr/local/share/zsh/site-functions
-sudo chmod g-w /usr/local/share/zsh
 
 ### ZSH Plugins
 
-> Install these plugins in `~/.vim` for them to automatically be picked up by
+> Install these plugins in `~/.vim/zsh_plugins.` for them to automatically be picked up by
 > the config.
 
 ```
