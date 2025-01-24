@@ -97,46 +97,33 @@ sudo sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mast
 ```
 sudo chsh -s $(which zsh)
 ```
-**Install oh-my-zsh**
-```
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-```
 **Fix issues about permissions**
 ```
 sudo chmod g-w /usr/local/share/zsh/site-functions
 sudo chmod g-w /usr/local/share/zsh
+
+### ZSH Plugins
+
+> Install these plugins in `~/.vim` for them to automatically be picked up by
+> the config.
+
 ```
-**Install Syntax highlighting Plugin (Mac)**
-```
-brew install zsh-syntax-highlighting
-```
-**Further instructions for Synax Highlighting**
+**Install Syntax highlighting Plugin**
 
 [ZSH Syntax Highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
 
-#### Install ZSH Theme
 
-https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k
-
-#### ZSH Auto Suggestions
-
-https://github.com/zsh-users/zsh-autosuggestions
-
-Install:
+**Install ZSH auto suggestions Plugin:**
 
 ```
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.vim/zsh-autosuggestions
 ```
 
-#### FZF
-
+**Install FZF:**
 https://github.com/junegunn/fzf#using-git
-
-Install and Enable (note you must run the install script).
 
 ```
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-
 ~/.fzf/install
 ```
 
