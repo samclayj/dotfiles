@@ -50,7 +50,7 @@ Mac:
 brew install neovim
 ```
 
-Linux: TBD
+Linux: https://github.com/neovim/neovim/blob/master/INSTALL.md
 
 #### Install [vim-plug](https://github.com/junegunn/vim-plug):
 
