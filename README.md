@@ -1,3 +1,27 @@
+# Useful Commands with this Installation
+
+Fuzzy file search and open in Vim:
+```
+v $(fzf)
+```
+then tab for expansion.
+
+`ALT-c` for fuzzy directory search.
+
+Regex searches in files:
+
+```
+rg <regex>
+rg <regex> --files | fzf
+```
+
+Also in general it's pretty useful to pipe anything into fzf.
+
+```
+ls -a | fzf
+```
+
+
 # Create a Sudo User
 
 Log in as root, and then create a sudo user. 
@@ -118,6 +142,10 @@ sudo chsh -s $(which zsh)
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.vim/zsh_plugins/zsh-autosuggestions
 ```
 
+**Install ZSH Completions:**
+
+https://github.com/zsh-users/zsh-completions?tab=readme-ov-file#manual-installation
+
 **Install FZF:**
 https://github.com/junegunn/fzf#using-git
 
@@ -125,6 +153,10 @@ https://github.com/junegunn/fzf#using-git
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 ```
+
+**Rip Grep:**
+
+https://github.com/BurntSushi/ripgrep
 
 # Install on New Machine
 
