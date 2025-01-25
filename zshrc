@@ -1,6 +1,8 @@
 export EDITOR="nvim"
 export VISUAL="nvim"
+
 alias v='nvim'
+alias ll='ls -a'
 
 autoload -U compinit; compinit
 setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history file.
@@ -49,7 +51,6 @@ cursor_mode() {
     zle -N zle-keymap-select
     zle -N zle-line-init
 }
-
 cursor_mode
 
 # Vim mode support
