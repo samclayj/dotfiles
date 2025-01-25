@@ -12,7 +12,6 @@ set autoindent              " indent a new line the same amount as the line just
 set number                  " add line numbers
 set wildmode=longest,list   " get bash-like tab completions
 filetype plugin indent on   "allow auto-indenting depending on file type
-syntax on                   " syntax highlighting
 set mouse=a                 " enable mouse click
 set clipboard=unnamedplus   " using system clipboard
 set cursorline              " highlight current cursorline
@@ -29,20 +28,14 @@ set wrap "Wrap lines
 " Plugin Section
 filetype plugin on
 call plug#begin()
-Plug 'bluz71/vim-moonfly-colors', { 'as': 'moonfly' }
-Plug 'rebelot/kanagawa.nvim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
 Plug 'mhinz/vim-startify'
 call plug#end()
 
-" color schemes
-if (has("termguicolors"))
-  set termguicolors
-endif
-syntax enable
-colorscheme moonfly
-"colorscheme kanagawa
+set t_Co=0
+syntax on
+set background=light
 
 " open new split panes to right and below
 set splitright

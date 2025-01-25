@@ -45,6 +45,11 @@ I just recently started using this, but it's pretty worth it.
 
 #### Install NeoVim:
 
+Note: I found recently that I can just use the Terminal theme rather than
+installing a neovim theme at all. This is quite a bit simpler. Now just install
+iTerm or Ghosty, configure a theme, and Neovim picks up all of the theme syntax
+highlighting automatically.
+
 Mac:
 ```
 brew install neovim
@@ -65,9 +70,26 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 nvim --headless +PlugInstall +qall
 ```
 
-## Install iTerm
+## Install Terminal
 ```
 brew cask install iterm2
+```
+**Iterm Color Schemes**
+
+* https://iterm2colorschemes.com/
+* Current scheme is Moonfly. Afterglow is another option.
+* These themes are already in the Git repo for the configuration, just install
+  in iTerm.
+
+OR install Ghostty, and set a theme. It supports light/dark and is quite a bit
+simpler to use.
+
+* https://ghostty.org
+
+Themes are set in the Ghostty config:
+
+```
+theme = dark:DjangoRebornAgain,light:farmhouse-light
 ```
 
 ## Install tmux
@@ -163,11 +185,5 @@ black <directory or file>
 
 And autoformatting magically happens.
 
-# Iterm Color Schemes
-
-* https://iterm2colorschemes.com/
-* Current scheme is Moonfly. Afterglow is another option.
-* These themes are already in the Git repo for the configuration, just install in iTerm.
- 
 ## Docking with Ethernet
 Set ethernet to default: [macOS - How to get Mac to give Ethernet connection priority? - Ask Different](https://apple.stackexchange.com/questions/245353/how-to-get-mac-to-give-ethernet-connection-priority)
