@@ -71,22 +71,11 @@ nvim --headless +PlugInstall +qall
 ```
 
 ## Install Terminal
-```
-brew cask install iterm2
-```
-**Iterm Color Schemes**
 
-* https://iterm2colorschemes.com/
-* Current scheme is Moonfly. Afterglow is another option.
-* These themes are already in the Git repo for the configuration, just install
-  in iTerm.
-
-OR install Ghostty, and set a theme. It supports light/dark and is quite a bit
+Install Ghostty, and set a theme. It supports light/dark and is quite a bit
 simpler to use.
 
 * https://ghostty.org
-
-Themes are set in the Ghostty config:
 
 ```
 theme = dark:DjangoRebornAgain,light:farmhouse-light
