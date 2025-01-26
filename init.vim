@@ -30,12 +30,9 @@ call plug#begin()
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
 Plug 'mhinz/vim-startify'
+Plug 'tpope/vim-unimpaired'
+Plug 'morhetz/gruvbox'
 call plug#end()
-
-" Allow terminal themes to come through
-set t_Co=0
-syntax on
-set background=light
 
 " open new split panes to right and below
 set splitright
@@ -60,4 +57,10 @@ nnoremap <C-l> <C-w>l
 :vnoremap jk <Esc>
 :vnoremap kj <Esc>
 
+" Allow terminal themes to come through
+" color schemes
+colorscheme gruvbox
+set termguicolors
+syntax on
+set background=dark
 

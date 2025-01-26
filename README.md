@@ -154,9 +154,16 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 ```
 
-**Rip Grep:**
+**Install Rip Grep:**
 
 https://github.com/BurntSushi/ripgrep
+
+
+**Install Rip Grep ALl (RGA):**
+
+Rip grep for other file types.
+
+https://github.com/phiresky/ripgrep-all
 
 # Install on New Machine
 
