@@ -10,7 +10,8 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history file.
-unsetopt HIST_SAVE_NO_DUPS       # Write a duplicate event to the history file
+setopt auto_cd
+setopt share_history
 
 bindkey -v
 bindkey '^R' history-incremental-search-backward
@@ -113,3 +114,4 @@ else
     source /usr/share/doc/fzf/examples/key-bindings.zsh
     source /usr/share/doc/fzf/examples/completion.zsh
 fi
+export PATH="/home/sam/.local/bin:$PATH"
