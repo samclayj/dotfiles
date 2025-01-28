@@ -172,11 +172,22 @@ git clone https://github.com/zsh-users/zsh-completions.git ~/.vim/zsh_plugins/zs
 ```
 
 **Install FZF:**
+
+Note that the zshrc should automatically detect if you are on a mac and use
+the correct fzf source approach.
+
+Mac:
+
 https://github.com/junegunn/fzf#using-git
 
 ```
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
+```
+
+Ubuntu:
+```
+sudo apt-get install fzf
 ```
 
 **Install Rip Grep:**
