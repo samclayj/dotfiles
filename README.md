@@ -152,6 +152,10 @@ sudo chsh -s $(which zsh)
 
 * [ZSH Syntax Highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
 
+```
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.vim/zsh_plugins/zsh-syntax-highlighting
+```
+
 **Install ZSH auto suggestions Plugin:**
 
 ```
@@ -161,6 +165,11 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.vim/zsh_plugins/zs
 **Install ZSH Completions:**
 
 https://github.com/zsh-users/zsh-completions?tab=readme-ov-file#manual-installation
+
+```
+git clone https://github.com/zsh-users/zsh-completions.git ~/.vim/zsh_plugins/zsh-completions
+
+```
 
 **Install FZF:**
 https://github.com/junegunn/fzf#using-git
