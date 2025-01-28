@@ -5,6 +5,10 @@ alias v='nvim'
 alias ll='ls -a'
 
 autoload -U compinit; compinit
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
 setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history file.
 unsetopt HIST_SAVE_NO_DUPS       # Write a duplicate event to the history file
 
