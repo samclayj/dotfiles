@@ -214,7 +214,7 @@ cd ~/.vim
 mkdir -p "~/.config/tmux"
 ln -s ~/.vim/init.vim ~/.config/nvim/init.vim
 ln -s ~/.vim/zshrc ~/.zshrc
-ln -s ~/.vim/tmux.conf ~/.config/tmux/.tmux.conf
+ln -s ~/.vim/tmux.conf ~/.tmux.conf
 ```
 
 # Tidying
