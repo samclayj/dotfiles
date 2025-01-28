@@ -27,32 +27,6 @@ bindkey -M vicmd v edit-command-line
 # Prompt
 PS1='%F{blue}%~ 🦑 >>>%(?.%F{green}.%F{red}) '
 
-cursor_mode() {
-    # See https://ttssh2.osdn.jp/manual/4/en/usage/tips/vim.html for cursor shapes
-    cursor_block='\e[2 q'
-    cursor_beam='\e[6 q'
-
-    function zle-keymap-select {
-        if [[ ${KEYMAP} == vicmd ]] ||
-            [[ $1 = 'block' ]]; then
-            echo -ne $cursor_block
-        elif [[ ${KEYMAP} == main ]] ||
-            [[ ${KEYMAP} == viins ]] ||
-            [[ ${KEYMAP} = '' ]] ||
-            [[ $1 = 'beam' ]]; then
-            echo -ne $cursor_beam
-        fi
-    }
-
-    zle-line-init() {
-        echo -ne $cursor_beam
-    }
-
-    zle -N zle-keymap-select
-    zle -N zle-line-init
-}
-cursor_mode
-
 # Vim mode support
 autoload -Uz select-bracketed select-quoted
 zle -N select-quoted
@@ -124,6 +98,14 @@ zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f
 fpath=(~/.vim/zsh_plugins/zsh-completions $fpath)
 source ~/.vim/zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.vim/zsh_plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source ~/.fzf/shell/completion.zsh
-source ~/.fzf/shell/key-bindings.zsh
+
+# Mac if FZF is installed from github directly.
+if [[ "($uname)" == "Darwin" ]]; then
+    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+    source ~/.fzf/shell/completion.zsh
+    source ~/.fzf/shell/key-bindings.zsh
+else
+    # Assume this is Ubuntu.
+    source /usr/share/doc/fzf/examples/key-bindings.zsh
+    source /usr/share/doc/fzf/examples/completion.zsh
+fi
