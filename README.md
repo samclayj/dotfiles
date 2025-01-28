@@ -96,14 +96,30 @@ nvim --headless +PlugInstall +qall
 
 ## Install Terminal
 
+**Mac**
+
 Install Ghostty, and set a theme. It supports light/dark and is quite a bit
 simpler to use.
+
+
+**Remote Host**
+
+[Add Ghostty’s terminfo to a remote machine](https://ghostty.org/docs/help/terminfo):
+
+```
+infocmp -x | ssh YOUR_SERVER -- tic -x -
+```
+Then SSH like normal.
 
 * https://ghostty.org
 
 ```
 theme = dark:DjangoRebornAgain,light:farmhouse-light
 ```
+
+**iPad**
+
+Install Secure Shellfish.
 
 ## Install tmux
 
