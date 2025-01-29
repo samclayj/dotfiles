@@ -113,5 +113,5 @@ else
     # Assume this is Ubuntu.
     source /usr/share/doc/fzf/examples/key-bindings.zsh
     source /usr/share/doc/fzf/examples/completion.zsh
+    export PATH="/home/sam/.local/bin:$PATH"
 fi
-export PATH="/home/sam/.local/bin:$PATH"
