@@ -24,6 +24,9 @@ ls -a | fzf
 
 # Create a Sudo User
 
+> Note: if I make this user `sam` things will be easier because the path
+> variables are picked up automatically.
+
 Log in as root, and then create a sudo user. 
 
 Use this user from now on when logging in for development work.
