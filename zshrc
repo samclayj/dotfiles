@@ -105,7 +105,7 @@ source ~/.vim/zsh_plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.vim/zsh_plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Mac if FZF is installed from github directly.
-if [[ "($uname)" == "Darwin" ]]; then
+if [[ $OSTYPE == darwin* && $CPUTYPE == arm64 ]]; then
     [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
     source ~/.fzf/shell/completion.zsh
     source ~/.fzf/shell/key-bindings.zsh
