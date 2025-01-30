@@ -33,6 +33,29 @@ Use this user from now on when logging in for development work.
 
 [Digital Ocean Instructions](https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-ubuntu-quickstart)
 
+# Installing Tailscale
+
+This is a VPN that allows all devices to appear on the same local network
+regardless of location. It's really amazing and easy to setup
+
+Ubuntu:
+
+* https://tailscale.com/download/linux/ubuntu-2404
+
+```
+curl -fsSL https://tailscale.com/install.sh | sh sudo tailscale up
+```
+
+On Mac/iOS just download the tailscale app and login.
+
+Settings can be managed in the Tailscale app, but this allows SSH and access by
+local name rather than IP.... automatically. 
+
+It also allows mounting external storage.
+
+For Digital Ocean, you might need to adjust the droplet firewall settings
+to allow Tailscale's IP.
+
 # Install Dependencies
 
 ## Install Homebrew (for Mac and Linux)
