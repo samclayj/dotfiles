@@ -277,3 +277,46 @@ And autoformatting magically happens.
 
 ## Docking with Ethernet
 Set ethernet to default: [macOS - How to get Mac to give Ethernet connection priority? - Ask Different](https://apple.stackexchange.com/questions/245353/how-to-get-mac-to-give-ethernet-connection-priority)
+
+# Python Development
+
+## Install Jupyter (for Rapid Prototyping)
+
+Voila for dashboarding.
+
+```
+# Install
+pip install jupyterlab
+brew install jupyterlab
+
+# Launch
+jupyter lab
+```
+
+## Install Django on Ubuntu
+
+```
+sudo apt update
+sudo apt-get install python3-full
+sudo apt install python3-pip
+python3 -m venv personalprojects
+source personalprojects/bin/activate
+python -m pip install --upgrade pip --break-system-packages
+python3 -m pip install Django
+echo 'export PATH="/home/sam/.local/bin:$PATH"' >> ~/.zshrc
+```
+
+Open Port 8000:
+
+```
+sudo ufw allow 8000
+```
+
+Add an inbound traffic rule for TCP at port 8000:
+* https://cloud.digitalocean.com/networking/firewalls/f4b28212–57db-4fee-a87b-8ac6fef6b918/rules?i=518805
+
+This can be scoped to port 8000.
+
+Then I can log in!
+
+http://204.48.19.140:8000/focus/
