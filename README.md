@@ -107,6 +107,11 @@ brew install neovim
 
 Linux: https://github.com/neovim/neovim/blob/master/INSTALL.md
 
+```
+sudo apt remove neovim
+sudo apt install neovim
+```
+
 #### Install [vim-plug](https://github.com/junegunn/vim-plug):
 
 ```
