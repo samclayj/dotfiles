@@ -1,3 +1,23 @@
+# Install on New Machine
+
+### Pre-Req
+
+Install the major dependencies in the "Install Dependencies" section.
+
+#### Clone configuration
+```
+cd ~
+git clone http://github.com/samclayj/dotfiles.git ~/.vim
+cd ~/.vim
+```
+#### Create Symbolic Links
+```
+mkdir -p "~/.config/tmux"
+ln -s ~/.vim/init.vim ~/.config/nvim/init.vim
+ln -s ~/.vim/zshrc ~/.zshrc
+ln -s ~/.vim/tmux.conf ~/.tmux.conf
+```
+
 # Useful Commands with this Installation
 
 Fuzzy file search and open in Vim:
@@ -20,7 +40,6 @@ Also in general it's pretty useful to pipe anything into fzf.
 ```
 ls -a | fzf
 ```
-
 
 # Create a Sudo User
 
@@ -132,7 +151,6 @@ nvim --headless +PlugInstall +qall
 Install Ghostty, and set a theme. It supports light/dark and is quite a bit
 simpler to use.
 
-
 **Remote Host**
 
 [Add Ghostty’s terminfo to a remote machine](https://ghostty.org/docs/help/terminfo):
@@ -145,7 +163,7 @@ Then SSH like normal.
 * https://ghostty.org
 
 ```
-theme = dark:DjangoRebornAgain,light:farmhouse-light
+theme = GruvboxDark
 ```
 
 **iPad**
@@ -232,21 +250,6 @@ Rip grep for other file types.
 
 https://github.com/phiresky/ripgrep-all
 
-# Install on New Machine
-
-#### Clone configuration
-```
-cd ~
-git clone http://github.com/samclayj/dotfiles.git ~/.vim
-cd ~/.vim
-```
-#### Create Symbolic Links
-```
-mkdir -p "~/.config/tmux"
-ln -s ~/.vim/init.vim ~/.config/nvim/init.vim
-ln -s ~/.vim/zshrc ~/.zshrc
-ln -s ~/.vim/tmux.conf ~/.tmux.conf
-```
 
 # Tidying
 
