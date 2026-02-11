@@ -4,13 +4,13 @@
 
 Install the major dependencies in the "Install Dependencies" section.
 
-#### Clone configuration
+### Clone configuration
 ```
 cd ~
 git clone http://github.com/samclayj/dotfiles.git ~/.vim
 cd ~/.vim
 ```
-#### Create Symbolic Links
+### Create Symbolic Links
 ```
 mkdir -p "~/.config/tmux"
 ln -s ~/.vim/init.vim ~/.config/nvim/init.vim
@@ -18,30 +18,7 @@ ln -s ~/.vim/zshrc ~/.zshrc
 ln -s ~/.vim/tmux.conf ~/.tmux.conf
 ```
 
-# Useful Commands with this Installation
-
-Fuzzy file search and open in Vim:
-```
-v $(fzf)
-```
-then tab for expansion.
-
-`ALT-c` for fuzzy directory search.
-
-Regex searches in files:
-
-```
-rg <regex>
-rg <regex> --files | fzf
-```
-
-Also in general it's pretty useful to pipe anything into fzf.
-
-```
-ls -a | fzf
-```
-
-# Create a Sudo User
+### Create a Sudo User
 
 > Note: if I make this user `sam` things will be easier because the path
 > variables are picked up automatically.
@@ -52,7 +29,9 @@ Use this user from now on when logging in for development work.
 
 [Digital Ocean Instructions](https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-ubuntu-quickstart)
 
-# Installing Tailscale
+# Install Dependencies
+
+## Install Tailscale
 
 This is a VPN that allows all devices to appear on the same local network
 regardless of location. It's really amazing and easy to setup
@@ -74,8 +53,6 @@ It also allows mounting external storage.
 
 For Digital Ocean, you might need to adjust the droplet firewall settings
 to allow Tailscale's IP.
-
-# Install Dependencies
 
 ## Install Homebrew (for Mac and Linux)
 ```
@@ -250,41 +227,23 @@ Rip grep for other file types.
 
 https://github.com/phiresky/ripgrep-all
 
-
-# Tidying
-
-* I can open vs code in browser (just like cider) by going to github.dev.
-
-Use `tidy` utility to format HTML files:
-
-```
-tidy <file>.html
-```
-
-Or from Vim:
-
-```
-:!tidy
-```
-
-To fix indentation in a file, use `=G` in Vim.
-
-### Python
-
-```
-pip install git+https://github.com/psf/black
-```
-
-Then run
-
-```
-black <directory or file>
-```
-
-And autoformatting magically happens.
+# Mac Specific Setup
 
 ## Docking with Ethernet
+
 Set ethernet to default: [macOS - How to get Mac to give Ethernet connection priority? - Ask Different](https://apple.stackexchange.com/questions/245353/how-to-get-mac-to-give-ethernet-connection-priority)
+
+## Install BetterTouchTool
+
+For shortcuts on the trackpad and mouse and keyboard. The `bttpreset` file contains my latest preset.
+
+## Change Default Date Settings
+
+Set the date format on the Mac to `YYYY-MM-DD`. This is in System Settings.
+
+## Set Capslock to CTRL Key
+
+Do this in System settings.
 
 # Python Development
 
@@ -328,3 +287,62 @@ This can be scoped to port 8000.
 Then I can log in!
 
 http://204.48.19.140:8000/focus/
+
+# Useful Commands with this Installation
+
+## Searching
+
+Fuzzy file search and open in Vim:
+```
+v $(fzf)
+```
+then tab for expansion.
+
+`ALT-c` for fuzzy directory search.
+
+Regex searches in files:
+
+```
+rg <regex>
+rg <regex> --files | fzf
+```
+
+Also in general it's pretty useful to pipe anything into fzf.
+
+```
+ls -a | fzf
+```
+
+## Tidying
+
+* I can open VSCode in browser (just like cider) by going to github.dev.
+
+### HTML Autoformatting
+
+Use `tidy` utility to format HTML files:
+
+```
+tidy <file>.html
+```
+
+Or from Vim:
+
+```
+:!tidy
+```
+
+To fix indentation in a file, use `=G` in Vim.
+
+### Python Autoformatting
+
+```
+pip install git+https://github.com/psf/black
+```
+
+Then run
+
+```
+black <directory or file>
+```
+
+And autoformatting magically happens.
