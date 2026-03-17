@@ -2,7 +2,7 @@
 
 ### Pre-Req
 
-Install the major dependencies in the "Install Dependencies" section.
+Install the major dependencies in the "Install Dependencies" section. 
 
 ### Clone configuration
 ```

@@ -15,14 +15,17 @@ set mouse=a                 " enable mouse click
 set clipboard=unnamedplus   " using system clipboard
 set cursorline              " highlight current cursorline
 set ttyfast                 " Speed up scrolling in Vim
-set smarttab
-" Linebreak on 80 characters
-set cc=80                  " set an 80 column border for good coding style
-set lbr
-set tw=80
-set textwidth=80
-set si "Smart indent
-set wrap "Wrap lines
+
+" Behavior for all files (Defaults)
+set colorcolumn=80 
+set wrap                " Visually wrap long lines
+set linebreak           " Wrap at whole words, not in the middle of a word
+set smartindent         " 'si' - Good for coding
+set textwidth=80        " 'tw' - Hard break at 80 chars
+
+" Exception for Markdown/Text (Prose)
+" This turns OFF the physical line breaks so your files look good in iA Writer
+autocmd FileType markdown,text setlocal textwidth=0
 
 " Plugin Section
 filetype plugin on
@@ -63,4 +66,4 @@ colorscheme gruvbox
 set termguicolors
 syntax on
 set background=dark
-
+highlight ColorColumn guibg=#d65d0e guifg=NONE
