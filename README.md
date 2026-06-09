@@ -58,7 +58,14 @@ to allow Tailscale's IP.
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
-    
+
+## Install JJ
+
+**Mac**
+```
+brew install jj
+```
+
 ## Install Github CLI
 
 This is worth having - makes managing git repositories much easier after logging in a single time.
