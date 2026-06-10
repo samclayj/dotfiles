@@ -64,6 +64,7 @@ to allow Tailscale's IP.
 **Mac**
 ```
 brew install jj
+brew install watch
 ```
 
 ```
