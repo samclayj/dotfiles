@@ -376,3 +376,10 @@ mkdir -p ~/.gemini/antigravity-cli/skills
 # Symlink the project-change-management skill
 ln -s ~/.vim/.agent/skills/project-change-management ~/.gemini/antigravity-cli/skills/project-change-management
 ```
+
+### Symlink Global Persona (AGENTS.md)
+To share your personal interaction guidelines and rules globally:
+```bash
+# Symlink global persona rules
+ln -sf ~/.vim/AGENTS.md ~/.gemini/AGENTS.md
+```
