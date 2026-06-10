@@ -5,12 +5,14 @@
 Install the major dependencies in the "Install Dependencies" section. 
 
 ### Clone configuration
+
 ```
 cd ~
 git clone http://github.com/samclayj/dotfiles.git ~/.vim
 cd ~/.vim
 ```
 ### Create Symbolic Links
+
 ```
 mkdir -p "~/.config/tmux"
 ln -s ~/.vim/init.vim ~/.config/nvim/init.vim
@@ -70,7 +72,7 @@ brew install watch
 ```
 jj config set --user user.name "Sam Jentsch"
 jj config set --user user.email "samclayj@gmail.com"
-``
+```
 
 Then use `jjwatch` for view of pending commits.
 
