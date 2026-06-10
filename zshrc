@@ -3,6 +3,7 @@ export VISUAL="nvim"
 
 alias v='nvim'
 alias ll='ls -a'
+alias jjwatch='watch -c "jj log --no-pager --color=always"'
 
 autoload -U compinit; compinit
 HISTFILE=~/.zsh_history
@@ -132,3 +133,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 . "$HOME/.local/bin/env"
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/samjentsch/.local/bin:$PATH"

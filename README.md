@@ -58,7 +58,22 @@ to allow Tailscale's IP.
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
-    
+
+## Install JJ
+
+**Mac**
+```
+brew install jj
+brew install watch
+```
+
+```
+jj config set --user user.name "Sam Jentsch"
+jj config set --user user.email "samclayj@gmail.com"
+``
+
+Then use `jjwatch` for view of pending commits.
+
 ## Install Github CLI
 
 This is worth having - makes managing git repositories much easier after logging in a single time.
