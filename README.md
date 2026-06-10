@@ -197,31 +197,43 @@ Set the date format on your Mac to `YYYY-MM-DD` in **System Settings**.
 Remap **Caps Lock** to the **Control (Ctrl)** key in **System Settings**.
 
 ---
-
 ## Python Development
+
+Astral **`uv`** is used to manage Python versions, virtual environments, and dependencies.
+
+### Installation
+* **Mac:**
+  ```bash
+  brew install uv
+  ```
+* **Linux/Ubuntu:**
+  ```bash
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+  ```
 
 ### JupyterLab
 Used for rapid prototyping.
 ```bash
-# Installation
-pip install jupyterlab
-# OR
-brew install jupyterlab
+# Launch JupyterLab instantly in an ephemeral environment
+uv run --with jupyterlab jupyter lab
 
-# Launch
+# Or install it globally as a standalone tool
+uv tool install jupyterlab
 jupyter lab
 ```
 
 ### Django (Ubuntu)
 ```bash
 sudo apt update
-sudo apt-get install python3-full
-sudo apt install python3-pip
-python3 -m venv personalprojects
+# Install uv
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Create a virtual environment using uv
+uv venv personalprojects
 source personalprojects/bin/activate
-python -m pip install --upgrade pip --break-system-packages
-python3 -m pip install Django
-echo 'export PATH="/home/sam/.local/bin:$PATH"' >> ~/.zshrc
+
+# Install Django
+uv pip install django
 ```
 
 #### Open Firewall Port 8000
@@ -263,8 +275,7 @@ Add an inbound TCP firewall rule for port 8000 in your [Digital Ocean console](h
   *(To fix indentation of the current file in Vim, press `=G`.)*
 * **Python Autoformatting:** Use `black` to format Python code.
   ```bash
-  pip install git+https://github.com/psf/black
-  black <directory-or-file>
+  uvx black <directory-or-file>
   ```
 
 ---
