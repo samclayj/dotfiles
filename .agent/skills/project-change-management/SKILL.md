@@ -21,3 +21,16 @@ This skill mandates that the agent commits its work incrementally using Jujutsu 
 ## Best Practices
 - Write clear, descriptive commit messages for each increment.
 - Ensure each commit is self-contained and compilation/tests pass if possible.
+
+## Pushing and Pull Request Management
+When sharing changes to GitHub or another remote:
+1. **Determine PR Structure:**
+   - For a single logical feature, create one bookmark on the top commit of your stack (e.g., `jj bookmark create feature-name -r @`).
+   - For stacked Pull Requests, create distinct bookmarks on each commit in the chain.
+2. **Push the Bookmark:**
+   - Push the bookmark to origin using `jj git push --bookmark <bookmark-name>`.
+3. **Clean Up After Merge:**
+   - Once a PR is merged on the remote, run `jj git fetch` to sync remote changes.
+   - Create a new working copy on top of the remote main branch (e.g., `jj new master@origin` or `jj new main@origin`).
+   - Delete obsolete local bookmarks with `jj bookmark delete <bookmark-name>`.
+   - Propagate the deletion of the bookmark to the remote by pushing the deleted bookmark: `jj git push --bookmark <bookmark-name>`.
