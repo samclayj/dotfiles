@@ -1,285 +1,219 @@
-# Install on New Machine
+# Dotfiles & System Setup
 
-### Pre-Req
+This repository contains configuration files (dotfiles) and setup instructions for macOS and Linux development environments.
 
-Install the major dependencies in the "Install Dependencies" section. 
+---
 
-### Clone configuration
+## Installation on a New Machine
 
-```
+### 1. Prerequisites
+Install the major dependencies listed in the [Dependencies](#dependencies) section first.
+
+### 2. Clone Configuration
+```bash
 cd ~
 git clone http://github.com/samclayj/dotfiles.git ~/.vim
 cd ~/.vim
 ```
-### Create Symbolic Links
 
-```
-mkdir -p "~/.config/tmux"
+### 3. Create Symbolic Links
+```bash
+mkdir -p ~/.config/tmux
+mkdir -p ~/.config/nvim
+
 ln -s ~/.vim/init.vim ~/.config/nvim/init.vim
 ln -s ~/.vim/zshrc ~/.zshrc
 ln -s ~/.vim/tmux.conf ~/.tmux.conf
 ```
 
-### Create a Sudo User
+### 4. Create a Sudo User
+> **Note:** If you name this user `sam`, setup will be easier because path variables are picked up automatically.
 
-> Note: if I make this user `sam` things will be easier because the path
-> variables are picked up automatically.
+Log in as `root`, and then create a sudo user. Use this user from now on when logging in for development work. See the [Digital Ocean Instructions](https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-ubuntu-quickstart) for reference.
 
-Log in as root, and then create a sudo user. 
+---
 
-Use this user from now on when logging in for development work.
+## Dependencies
 
-[Digital Ocean Instructions](https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-ubuntu-quickstart)
+### Tailscale
+Tailscale is a VPN that allows all devices to appear on the same local network regardless of location. It also allows mounting external storage.
 
-# Install Dependencies
+* **Mac/iOS:** Download the Tailscale app and log in.
+* **Ubuntu:** Follow the [Tailscale Linux Install Guide](https://tailscale.com/download/linux/ubuntu-2404).
+  ```bash
+  curl -fsSL https://tailscale.com/install.sh | sh
+  sudo tailscale up
+  ```
 
-## Install Tailscale
+*For Digital Ocean droplets, adjust the firewall settings to allow Tailscale's IP if needed.*
 
-This is a VPN that allows all devices to appear on the same local network
-regardless of location. It's really amazing and easy to setup
-
-Ubuntu:
-
-* https://tailscale.com/download/linux/ubuntu-2404
-
-```
-curl -fsSL https://tailscale.com/install.sh | sh sudo tailscale up
-```
-
-On Mac/iOS just download the tailscale app and login.
-
-Settings can be managed in the Tailscale app, but this allows SSH and access by
-local name rather than IP.... automatically. 
-
-It also allows mounting external storage.
-
-For Digital Ocean, you might need to adjust the droplet firewall settings
-to allow Tailscale's IP.
-
-## Install Homebrew (for Mac and Linux)
-```
+### Homebrew (Mac and Linux)
+```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-## Install JJ
+### Jujutsu (jj)
+Jujutsu is a Git-compatible version control system.
 
-**Mac**
-```
+#### Installation (Mac)
+```bash
 brew install jj
 brew install watch
 ```
 
-```
+#### Configuration
+```bash
 jj config set --user user.name "Sam Jentsch"
 jj config set --user user.email "samclayj@gmail.com"
 ```
 
-Then use `jjwatch` for view of pending commits.
+*Use `jjwatch` (or `watch -c "jj log --no-pager --color=always"`) for a live view of pending commits.*
 
-## Install Github CLI
+### GitHub CLI
+Helps manage repositories easily from the command line.
 
-This is worth having - makes managing git repositories much easier after logging in a single time.
-
-**Mac**
-```
-brew install gh 
-```
-    
-Then login.
-
-**Ubuntu**
-
-Follow instructions for configuring apt-get:
-
-https://github.com/cli/cli/blob/trunk/docs/install_linux.md
-
-Install, then login.
-
-**Login**
-
-    gh auth login
-
-## NeoVim
-
-I just recently started using this, but it's pretty worth it.
-
-- [NeoVim](https://github.com/neovim/neovim)
-- [Sample NeoVim Config](https://medium.com/geekculture/neovim-configuration-for-beginners-b2116dbbde84)
-
-#### Install NeoVim:
-
-Note: I found recently that I can just use the Terminal theme rather than
-installing a neovim theme at all. This is quite a bit simpler. Now just install
-iTerm or Ghosty, configure a theme, and Neovim picks up all of the theme syntax
-highlighting automatically.
-
-Mac:
-```
-brew install neovim
+#### Installation (Mac)
+```bash
+brew install gh
 ```
 
-Linux: https://github.com/neovim/neovim/blob/master/INSTALL.md
+#### Installation (Ubuntu)
+Follow instructions for configuring `apt-get` at [GitHub CLI Linux Install Docs](https://github.com/cli/cli/blob/trunk/docs/install_linux.md), then install.
 
-```
-sudo apt remove neovim
-sudo apt install neovim
+#### Authentication
+```bash
+gh auth login
 ```
 
-#### Install [vim-plug](https://github.com/junegunn/vim-plug):
+### NeoVim
+An extensible Vim-based text editor.
 
-```
+* **iTerm/Ghostty Tip:** Using the terminal theme directly is much simpler than installing a separate NeoVim theme. Neovim automatically inherits syntax highlighting styles from the terminal emulator.
+
+#### Installation
+* **Mac:**
+  ```bash
+  brew install neovim
+  ```
+* **Linux:** (See the [NeoVim Linux Install Guide](https://github.com/neovim/neovim/blob/master/INSTALL.md))
+  ```bash
+  sudo apt remove neovim
+  sudo apt install neovim
+  ```
+
+#### Plugin Manager (vim-plug)
+```bash
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 
-#### Install Plug-ins:
-
-```
+#### Install Plugins
+```bash
 nvim --headless +PlugInstall +qall
 ```
 
-## Install Terminal
+### Terminal Emulators
 
-**Mac**
+#### Mac
+Install [Ghostty](https://ghostty.org) and set a theme (e.g., `theme = GruvboxDark`). It supports light/dark switching and is simple to use.
 
-Install Ghostty, and set a theme. It supports light/dark and is quite a bit
-simpler to use.
-
-**Remote Host**
-
-[Add Ghostty’s terminfo to a remote machine](https://ghostty.org/docs/help/terminfo):
-
-```
+#### Remote Host
+[Add Ghostty's terminfo to a remote machine](https://ghostty.org/docs/help/terminfo):
+```bash
 infocmp -x | ssh YOUR_SERVER -- tic -x -
 ```
-Then SSH like normal.
+Then SSH as normal.
 
-* https://ghostty.org
+#### iPad
+Install **Secure Shellfish** for SSH and terminal access.
 
-```
-theme = GruvboxDark
-```
+### Tmux
+Terminal multiplexer for managing multiple terminal sessions.
 
-**iPad**
+* **Mac:**
+  ```bash
+  brew install tmux
+  ```
+* **Linux:**
+  ```bash
+  sudo apt-get update
+  sudo apt-get install tmux
+  ```
 
-Install Secure Shellfish.
+### ZSH Configuration
 
-## Install tmux
-
-**Mac (with Homebrew)**
-```
-brew install tmux
-```
-**Linux**
-```
-sudo apt-get update
-sudo apt-get install tmux
-```
-## Configure ZSH
-
-**Linux**
-```
+#### Linux Installation
+```bash
 sudo apt install zsh
 ```
-**Change default shell**
-```
+
+#### Set ZSH as Default Shell
+```bash
 sudo chsh -s $(which zsh)
 ```
 
-### ZSH Plugins
+#### Plugins
+> Install these plugins under `~/.vim/zsh_plugins/` so they are automatically loaded by the shell configuration.
 
-> Install these plugins in `~/.vim/zsh_plugins.` for them to automatically be picked up by
-> the config.
+* **ZSH Syntax Highlighting:**
+  ```bash
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.vim/zsh_plugins/zsh-syntax-highlighting
+  ```
+* **ZSH Auto-Suggestions:**
+  ```bash
+  git clone https://github.com/zsh-users/zsh-autosuggestions ~/.vim/zsh_plugins/zsh-autosuggestions
+  ```
+* **ZSH Completions:**
+  ```bash
+  git clone https://github.com/zsh-users/zsh-completions.git ~/.vim/zsh_plugins/zsh-completions
+  ```
+* **FZF (Fuzzy Finder):**
+  * **Mac:**
+    ```bash
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
+    ```
+  * **Ubuntu:**
+    ```bash
+    sudo apt-get install fzf
+    ```
+* **Ripgrep:** See [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep).
+* **Ripgrep-All (RGA):** Ripgrep for PDF, Ebooks, Word docs, etc. See [phiresky/ripgrep-all](https://github.com/phiresky/ripgrep-all).
 
-**Install Syntax highlighting Plugin**
+---
 
-* [ZSH Syntax Highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
+## macOS-Specific Setup
 
-```
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.vim/zsh_plugins/zsh-syntax-highlighting
-```
+### Ethernet Priority
+To ensure macOS prioritizes physical Ethernet over Wi-Fi when docked, follow [this Apple StackExchange guide](https://apple.stackexchange.com/questions/245353/how-to-get-mac-to-give-ethernet-connection-priority).
 
-**Install ZSH auto suggestions Plugin:**
+### BetterTouchTool
+For mouse, trackpad, and keyboard shortcuts. The `Default.bttpreset` file in this repository contains the latest configuration preset.
 
-```
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.vim/zsh_plugins/zsh-autosuggestions
-```
+### Date Format
+Set the date format on your Mac to `YYYY-MM-DD` in **System Settings**.
 
-**Install ZSH Completions:**
+### Caps Lock to Control
+Remap **Caps Lock** to the **Control (Ctrl)** key in **System Settings**.
 
-https://github.com/zsh-users/zsh-completions?tab=readme-ov-file#manual-installation
+---
 
-```
-git clone https://github.com/zsh-users/zsh-completions.git ~/.vim/zsh_plugins/zsh-completions
+## Python Development
 
-```
-
-**Install FZF:**
-
-Note that the zshrc should automatically detect if you are on a mac and use
-the correct fzf source approach.
-
-Mac:
-
-https://github.com/junegunn/fzf#using-git
-
-```
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
-```
-
-Ubuntu:
-```
-sudo apt-get install fzf
-```
-
-**Install Rip Grep:**
-
-https://github.com/BurntSushi/ripgrep
-
-
-**Install Rip Grep ALl (RGA):**
-
-Rip grep for other file types.
-
-https://github.com/phiresky/ripgrep-all
-
-# Mac Specific Setup
-
-## Docking with Ethernet
-
-Set ethernet to default: [macOS - How to get Mac to give Ethernet connection priority? - Ask Different](https://apple.stackexchange.com/questions/245353/how-to-get-mac-to-give-ethernet-connection-priority)
-
-## Install BetterTouchTool
-
-For shortcuts on the trackpad and mouse and keyboard. The `bttpreset` file contains my latest preset.
-
-## Change Default Date Settings
-
-Set the date format on the Mac to `YYYY-MM-DD`. This is in System Settings.
-
-## Set Capslock to CTRL Key
-
-Do this in System settings.
-
-# Python Development
-
-## Install Jupyter (for Rapid Prototyping)
-
-Voila for dashboarding.
-
-```
-# Install
+### JupyterLab
+Used for rapid prototyping.
+```bash
+# Installation
 pip install jupyterlab
+# OR
 brew install jupyterlab
 
 # Launch
 jupyter lab
 ```
 
-## Install Django on Ubuntu
-
-```
+### Django (Ubuntu)
+```bash
 sudo apt update
 sudo apt-get install python3-full
 sudo apt install python3-pip
@@ -290,85 +224,57 @@ python3 -m pip install Django
 echo 'export PATH="/home/sam/.local/bin:$PATH"' >> ~/.zshrc
 ```
 
-Open Port 8000:
-
-```
+#### Open Firewall Port 8000
+```bash
 sudo ufw allow 8000
 ```
+Add an inbound TCP firewall rule for port 8000 in your [Digital Ocean console](https://cloud.digitalocean.com/networking/firewalls), then log in at `http://<your-ip>:8000/focus/`.
 
-Add an inbound traffic rule for TCP at port 8000:
-* https://cloud.digitalocean.com/networking/firewalls/f4b28212–57db-4fee-a87b-8ac6fef6b918/rules?i=518805
+---
 
-This can be scoped to port 8000.
+## Useful Commands
 
-Then I can log in!
+### Searching
+* **Fuzzy search files and open in Vim:**
+  ```bash
+  v $(fzf) # Press Tab for expansion
+  ```
+* **Fuzzy search directories:** Press `ALT-c`.
+* **Regex search in files:**
+  ```bash
+  rg <regex>
+  rg <regex> --files | fzf
+  ```
+* **Piping to FZF:**
+  ```bash
+  ls -a | fzf
+  ```
 
-http://204.48.19.140:8000/focus/
+### Formatting & Tidying
+* **VS Code in Browser:** Open GitHub files in a web browser editor by navigating to `github.dev` (or pressing `.` on any repository page).
+* **HTML Autoformatting:** Use `tidy` to format HTML files.
+  ```bash
+  tidy <file>.html
+  ```
+  Or from within Vim:
+  ```vim
+  :!tidy
+  ```
+  *(To fix indentation of the current file in Vim, press `=G`.)*
+* **Python Autoformatting:** Use `black` to format Python code.
+  ```bash
+  pip install git+https://github.com/psf/black
+  black <directory-or-file>
+  ```
 
-# Useful Commands with this Installation
+---
 
-## Searching
+## Agent Customization
 
-Fuzzy file search and open in Vim:
-```
-v $(fzf)
-```
-then tab for expansion.
-
-`ALT-c` for fuzzy directory search.
-
-Regex searches in files:
-
-```
-rg <regex>
-rg <regex> --files | fzf
-```
-
-Also in general it's pretty useful to pipe anything into fzf.
-
-```
-ls -a | fzf
-```
-
-## Tidying
-
-* I can open VSCode in browser (just like cider) by going to github.dev.
-
-### HTML Autoformatting
-
-Use `tidy` utility to format HTML files:
-
-```
-tidy <file>.html
-```
-
-Or from Vim:
-
-```
-:!tidy
-```
-
-To fix indentation in a file, use `=G` in Vim.
-
-### Python Autoformatting
-
-```
-pip install git+https://github.com/psf/black
-```
-
-Then run
-
-```
-black <directory or file>
-```
-
-And autoformatting magically happens.
-
-# Agent Skills
-
-For agentic coding assistants (like Google Antigravity), custom skills can be shared globally by symlinking them from this repository:
+Instructions for agentic AI coding assistants (like Google Antigravity).
 
 ### Symlink Skills Globally
+Custom workspace skills can be shared globally across all your repositories:
 ```bash
 # Create the global skills directory if it doesn't exist
 mkdir -p ~/.gemini/antigravity-cli/skills
