@@ -5,7 +5,6 @@ alias v='nvim'
 alias ll='ls -a'
 alias jjwatch='watch -c "jj log --no-pager --color=always"'
 
-autoload -U compinit; compinit
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
@@ -114,26 +113,13 @@ else
     # Assume this is Ubuntu.
     source /usr/share/doc/fzf/examples/key-bindings.zsh
     source /usr/share/doc/fzf/examples/completion.zsh
-    export PATH="/home/sam/.local/bin:$PATH"
+    export PATH="$HOME/.local/bin:$PATH"
 fi
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/samueljentsch/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/samueljentsch/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/samueljentsch/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/samueljentsch/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+
 
 . "$HOME/.local/bin/env"
 
 
 # Added by Antigravity CLI installer
-export PATH="/Users/samjentsch/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"

@@ -31,11 +31,11 @@ autocmd FileType markdown,text setlocal textwidth=0
 filetype plugin on
 call plug#begin()
 Plug 'ryanoasis/vim-devicons'
-Plug 'scrooloose/nerdtree'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-unimpaired'
 Plug 'morhetz/gruvbox'
 call plug#end()
+
 
 " open new split panes to right and below
 set splitright
