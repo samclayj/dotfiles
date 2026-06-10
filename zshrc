@@ -3,6 +3,7 @@ export VISUAL="nvim"
 
 alias v='nvim'
 alias ll='ls -a'
+alias jjwatch='watch -c "jj log --no-pager --color=always"'
 
 autoload -U compinit; compinit
 HISTFILE=~/.zsh_history
