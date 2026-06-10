@@ -361,3 +361,16 @@ black <directory or file>
 ```
 
 And autoformatting magically happens.
+
+# Agent Skills
+
+For agentic coding assistants (like Google Antigravity), custom skills can be shared globally by symlinking them from this repository:
+
+### Symlink Skills Globally
+```bash
+# Create the global skills directory if it doesn't exist
+mkdir -p ~/.gemini/antigravity-cli/skills
+
+# Symlink the project-change-management skill
+ln -s ~/.vim/.agent/skills/project-change-management ~/.gemini/antigravity-cli/skills/project-change-management
+```
