@@ -197,6 +197,52 @@ Set the date format on your Mac to `YYYY-MM-DD` in **System Settings**.
 Remap **Caps Lock** to the **Control (Ctrl)** key in **System Settings**.
 
 ---
+
+## Mac as a VPS
+
+### 1. Power & Sleep Management (`pmset`)
+
+Configure macOS kernel power settings to prevent sleep while connected to AC power and automatically recover from power outages.
+
+```bash
+# Prevent system sleep on AC power, turn display off after 5 mins
+sudo pmset -c sleep 0 displaysleep 5 disablesleep 1
+
+# Automatically restart after a power failure and enable Wake-on-LAN
+sudo pmset -c autorestart 1 womp 1
+```
+
+#### Closed-Lid / Clamshell Mode
+If running headlessly with the lid closed without an external display:
+- Install **Amphetamine** (Mac App Store) and run its **Amphetamine Enhancer** helper tool to bypass closed-lid sleep triggers.
+- Alternatively, leave the lid slightly cracked to prevent thermal throttling.
+
+---
+
+### 2. Remote Access & Tailscale Setup
+
+#### Enable macOS SSH
+Go to:
+`System Settings` > `General` > `Sharing` > Enable **Remote Login**.
+
+#### Tailscale Configuration
+Use the standalone package or CLI variant rather than the Mac App Store sandbox for headless reliability.
+
+```bash
+# Enable Tailscale with SSH support
+tailscale up --ssh --accept-routes
+```
+
+---
+
+### 3. Boot & Login Reliability
+
+- **Automatic Login:** Go to `System Settings` > `Users & Groups` > Enable **Automatically log in as [User]**.
+- **FileVault Caveat:** If FileVault is enabled, macOS blocks auto-login until the disk password is entered at the physical keyboard. 
+  - *Workaround:* Run the standalone `tailscaled` daemon as a system `LaunchDaemon` (via Homebrew) or disable FileVault.
+
+---
+
 ## Python Development
 
 Astral **`uv`** is used to manage Python versions, virtual environments, and dependencies.
