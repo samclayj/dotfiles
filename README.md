@@ -243,6 +243,13 @@ tailscale up --ssh --accept-routes
 
 ---
 
+### 4. Backups & System Maintenance
+
+- **Carbon Copy Cloner:** Use Carbon Copy Cloner for automated, bootable backups of your system drive to ensure fast recovery.
+- **Mole:** A macOS utility ([Mole](https://github.com/tw93/Mole)) to clean, optimize, and monitor your Mac to ensure it runs smoothly while acting as a server.
+
+---
+
 ## Python Development
 
 Astral **`uv`** is used to manage Python versions, virtual environments, and dependencies.
