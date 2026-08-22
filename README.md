@@ -112,6 +112,19 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 nvim --headless +PlugInstall +qall
 ```
 
+### Zed
+A high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.
+
+#### Installation
+* **Mac:**
+  ```bash
+  brew install --cask zed
+  ```
+* **Linux:**
+  ```bash
+  curl -f https://zed.dev/install.sh | sh
+  ```
+
 ### Terminal Emulators
 
 #### Mac
