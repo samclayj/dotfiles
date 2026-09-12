@@ -209,6 +209,50 @@ Set the date format on your Mac to `YYYY-MM-DD` in **System Settings**.
 ### Caps Lock to Control
 Remap **Caps Lock** to the **Control (Ctrl)** key in **System Settings**.
 
+### PKM CLIs (Personal Knowledge Management)
+
+Command-line tools for integrating note-taking and task management into terminal workflows and AI agents.
+
+#### Bear (Notes)
+* **Install Bear:** Download from the Mac App Store or via Homebrew:
+  ```bash
+  brew install --cask bear
+  ```
+* **Symlink Bear CLI:** Bear includes a native CLI binary inside the app bundle (`/Applications/Bear.app/Contents/MacOS/bearcli`). Symlink it into your path:
+  ```bash
+  ln -sf /Applications/Bear.app/Contents/MacOS/bearcli ~/.local/bin/bearcli
+  ```
+* **Usage & Aliases:**
+  With `alias bear='bearcli'` configured in `~/.zshrc`:
+  ```bash
+  bear list                           # List recent notes
+  bear search "<query>"               # Search notes
+  bear cat --title "<Note Title>"     # Output raw Markdown content
+  bear create --title "Title"         # Create a note
+  bear append --title "Title"         # Append text to a note
+  bear --help                         # View all subcommands
+  ```
+
+#### RemCTL (Apple Reminders)
+[RemCTL](https://github.com/viticci/remctl) is a fast, scriptable Apple Reminders CLI for macOS designed for power users and AI agents.
+
+* **Installation:**
+  ```bash
+  git clone https://github.com/viticci/remctl.git
+  cd remctl
+  PREFIX="$HOME/.local" ./install.sh --bootstrap
+  remctl onboard
+  remctl doctor
+  ```
+* **Usage:**
+  ```bash
+  remctl today                        # View today's reminders
+  remctl upcoming                     # View upcoming reminders
+  remctl show "Shopping"              # Show tasks in a specific list
+  remctl add "Buy milk" --list "Todo" # Add a reminder
+  remctl complete <id>                # Complete a task
+  ```
+
 ---
 
 ## Mac as a VPS
