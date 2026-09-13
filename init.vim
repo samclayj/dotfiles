@@ -16,6 +16,11 @@ set clipboard=unnamedplus   " using system clipboard
 set cursorline              " highlight current cursorline
 set ttyfast                 " Speed up scrolling in Vim
 
+" Automatically check for external file changes on focus or cursor pause
+set autoread
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+autocmd FileChangedShellPost * echohl WarningMsg | echo "File reloaded from disk." | echohl None
+
 " Behavior for all files (Defaults)
 set colorcolumn=80 
 set wrap                " Visually wrap long lines
