@@ -69,6 +69,35 @@ jj config set --user user.email "samclayj@gmail.com"
 
 *Use `jjwatch` (or `watch -c "jj log --no-pager --color=always"`) for a live view of pending commits.*
 
+#### Viewing Diffs & History
+Jujutsu makes inspecting changes straightforward because the working copy (`@`) is treated as a commit:
+
+* **Commit log with full patch diffs:**
+  ```bash
+  jj log -p
+  ```
+* **Commit log with file summary only:**
+  ```bash
+  jj log -s
+  ```
+* **Trace history & diffs for a specific file:**
+  ```bash
+  jj log -p path/to/file
+  ```
+* **View current uncommitted changes:**
+  ```bash
+  jj diff
+  ```
+* **View diff for any specific revision:**
+  ```bash
+  jj diff -r <change-id>      # e.g. jj diff -r @- for the previous commit
+  ```
+* **Operation log (time-travel & undo):**
+  ```bash
+  jj op log                   # View all repo mutations
+  jj op undo                  # Revert the last operation
+  ```
+
 ### GitHub CLI
 Helps manage repositories easily from the command line.
 
