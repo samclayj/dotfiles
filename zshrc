@@ -6,6 +6,11 @@ alias ll='ls -a'
 alias jjwatch='watch -c "jj log --no-pager --color=always"'
 alias bear='bearcli'
 
+dev() {
+    ~/.vim/scripts/dev-session "$@"
+}
+
+
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
@@ -63,6 +68,7 @@ bindkey -M menuselect '^xu' undo                           # Undo
 autoload -U compinit; compinit
 _comp_options+=(globdots) # With hidden files
 compdef vman="man"
+compdef _directories dev
 # setopt GLOB_COMPLETE      # Show autocompletion menu with globs
 setopt MENU_COMPLETE        # Automatically highlight first element of completion menu
 setopt AUTO_LIST            # Automatically list choices on ambiguous completion.

@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Require directory argument
+if [ -z "${1:-}" ]; then
+    echo "Usage: dev <directory>"
+    exit 1
+fi
+
+TARGET_INPUT="$1"
+
+# Create directory relative to current working directory if it does not exist
+mkdir -p "$TARGET_INPUT"
+TARGET_DIR="$(cd "$TARGET_INPUT" && pwd)"
+
+# Sanitize session name for tmux (remove invalid characters like . and :)
+SESSION_NAME="$(basename "$TARGET_DIR" | tr '.: ' '___')"
+
+# If session already exists, attach or switch directly
+if tmux has-session -t "$SESSION_NAME" 2>/dev/null; then
+    echo "Session '$SESSION_NAME' already exists. Attaching..."
+    if [ -n "${TMUX:-}" ]; then
+        tmux switch-client -t "$SESSION_NAME"
+    else
+        tmux attach-session -t "$SESSION_NAME"
+    fi
+    exit 0
+fi
+
+# Bootstrap Git and Jujutsu if missing so jjwatch works immediately
+if [ ! -d "$TARGET_DIR/.git" ] && [ ! -d "$TARGET_DIR/.jj" ]; then
+    git -C "$TARGET_DIR" init -q
+    jj git init -R "$TARGET_DIR" -q 2>/dev/null || true
+elif [ -d "$TARGET_DIR/.git" ] && [ ! -d "$TARGET_DIR/.jj" ]; then
+    jj git init -R "$TARGET_DIR" -q 2>/dev/null || true
+fi
+
+# 1. Create detached session with Window 1: AI
+tmux new-session -d -s "$SESSION_NAME" -n "AI" -c "$TARGET_DIR"
+
+# Launch Antigravity in top pane
+tmux send-keys -t "$SESSION_NAME:AI.1" "agy" C-m
+
+# Split AI window vertically (bottom pane 30% height) for jjwatch
+tmux split-window -v -t "$SESSION_NAME:AI" -l 30% -c "$TARGET_DIR"
+tmux send-keys -t "$SESSION_NAME:AI.2" "jjwatch" C-m
+
+# 2. Window 2: EDITOR (Neovim opened to the directory)
+tmux new-window -t "$SESSION_NAME" -n "EDITOR" -c "$TARGET_DIR"
+tmux send-keys -t "$SESSION_NAME:EDITOR" "nvim ." C-m
+
+# 3. Focus Window 1 (AI) and top pane (Antigravity)
+tmux select-window -t "$SESSION_NAME:AI"
+tmux select-pane -t "$SESSION_NAME:AI.1"
+
+# 4. Attach or switch client (can be skipped for automated testing)
+if [ -z "${DEV_SESSION_NO_ATTACH:-}" ]; then
+    if [ -n "${TMUX:-}" ]; then
+        tmux switch-client -t "$SESSION_NAME"
+    else
+        tmux attach-session -t "$SESSION_NAME"
+    fi
+fi
