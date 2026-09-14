@@ -28,11 +28,9 @@ if tmux has-session -t "$SESSION_NAME" 2>/dev/null; then
 fi
 
 # Bootstrap Git and Jujutsu if missing so jjwatch works immediately
-if [ ! -d "$TARGET_DIR/.git" ] && [ ! -d "$TARGET_DIR/.jj" ]; then
-    git -C "$TARGET_DIR" init -q
-    jj git init -R "$TARGET_DIR" -q 2>/dev/null || true
-elif [ -d "$TARGET_DIR/.git" ] && [ ! -d "$TARGET_DIR/.jj" ]; then
-    jj git init -R "$TARGET_DIR" -q 2>/dev/null || true
+if [ ! -d "$TARGET_DIR/.jj" ]; then
+    echo "Initializing Git-backed Jujutsu repo in $TARGET_DIR..."
+    jj --quiet git init "$TARGET_DIR"
 fi
 
 # 1. Create detached session with Window 1: AI
