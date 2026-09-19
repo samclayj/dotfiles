@@ -20,7 +20,8 @@ setopt auto_cd
 setopt share_history
 
 bindkey -v
-bindkey '^R' history-incremental-search-backward
+# Enable FZF history search.
+eval "$(fzf --zsh)"
 export KEYTIMEOUT=1
 
 zmodload zsh/complist
