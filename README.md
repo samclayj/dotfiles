@@ -427,10 +427,11 @@ Instructions for agentic AI coding assistants (like Google Antigravity).
 Custom workspace skills can be shared globally across all your repositories:
 ```bash
 # Create the global skills directory if it doesn't exist
-mkdir -p ~/.gemini/antigravity-cli/skills
+mkdir -p ~/.gemini/config/skills
 
-# Symlink the project-change-management skill
-ln -s ~/.vim/.agent/skills/project-change-management ~/.gemini/antigravity-cli/skills/project-change-management
+# Symlink skills from ~/.vim/.agent/skills
+ln -s ~/.vim/.agent/skills/project-change-management ~/.gemini/config/skills/project-change-management
+ln -s ~/.vim/.agent/skills/movie-profile ~/.gemini/config/skills/movie-profile
 ```
 
 ### Symlink Global Persona (AGENTS.md)
