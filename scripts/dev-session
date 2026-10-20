@@ -3,7 +3,7 @@ set -euo pipefail
 
 # Require directory argument
 if [ -z "${1:-}" ]; then
-    echo "Usage: dev <directory>"
+    echo "Usage: workon <directory>"
     exit 1
 fi
 
